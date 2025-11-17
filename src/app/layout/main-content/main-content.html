@@ -1,0 +1,16 @@
+<mat-toolbar>
+  <button matIconButton (click)="collapsed.set(!collapsed())" class="burger">
+    <mat-icon>menu</mat-icon>
+  </button>
+  Responsive sidebar
+</mat-toolbar>
+<mat-drawer-container>
+  <mat-drawer [style.width]="sidenavWidth()" mode="side" opened>
+    <app-custom-sidenav [collapsed]="collapsed()"/>
+  </mat-drawer>
+  <mat-drawer-content [style.marging-left]="sidenavWidth()">
+    <div class="content">
+      <router-outlet />
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>
