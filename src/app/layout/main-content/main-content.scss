@@ -1,80 +1,86 @@
+:host * {
+  transition: all 500ms ease-in-out;
+}
+
+
 mat-toolbar {
-    background: #bd17eb;
-    color: white;
-    position: relative;
-    z-index: 5;
+  background: #bd17eb;
+  color: white;
+  position: relative;
+  z-index: 5;
+}
+
+mat-drawer {
+  // margin-block: 16px;
+  border-right: none;
+  background: #f3d3fc;
+  color: white;
+  border-radius: 10px;
+  padding: 6px;
+  
+
+  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14),
+    0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+mat-drawer-container {
+  height: calc(100vh - 65px);
+}
+
+mat-drawer, mat-drawer-content {
+  transition: all 600ms ease-in-out;
+}
+
+.content {
+  height: calc(100vh - 100px);
+  border-radius: 10px;
+  // margin-block: 16px;
+  padding: 16px;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: lightgray;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.menu-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 1rem;
+
+  mat-icon {
+    margin-right: 8px;
   }
-  
-  mat-drawer {
-    margin-block: 16px;       
-    border-right: none;
-    background: #e293fa;
-    color: white;
-    border-radius: 10px;
-    padding: 6px;
-    
-    box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14),
-      0px 3px 14px 2px rgba(0, 0, 0, 0.12);
-  }
-  
-  mat-drawer-container {
-    height: calc(100vh - 65px);
-  }
-  
-  .content {
-    height: calc(100vh - 130px);
-    border-radius: 10px;
-    margin-block: 16px;   
-    padding: 16px;
-    overflow: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    color: lightgray;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  }
-  
-  .menu-button {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    font-size: 1rem;
-  
-    mat-icon {
-      margin-right: 8px;
-    }
-  }
-  
-  .avatar {
-      margin-top: 16px;
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14),
-      0px 3px 14px 2px rgba(0, 0, 0, 0.12);
-    }
-  
-    .burger {
-      margin-right: 20px;
-      color: white;
-    }
-    
-    .name {
-      margin-top: 8px;
-      font-weight: normal;
-    }
-    
-    .designation {
-      margin-top: 2px;
-      font-size: 0.7rem;
-      color: rgb(252, 242, 242);
-    }
-    
-    mat-divider {
-      margin-top: 16px;
-      margin-bottom: 16px;
-      background-color: rgba(255, 255, 255, 0.5);
-    }
-  
+}
+
+
+
+.burger {
+  margin-right: 20px;
+  color: white;
+}
+
+.name {
+  margin-top: 8px;
+  font-weight: normal;
+}
+
+.designation {
+  margin-top: 2px;
+  font-size: 0.7rem;
+  color: rgb(252, 242, 242);
+}
+
+mat-divider {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.mat-drawer-transition .mat-drawer {
+  transition: all 500ms ease-in-out !important;
+}

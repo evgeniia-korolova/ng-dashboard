@@ -1,5 +1,10 @@
 <div class="sidenav-header">
-  <img class="avatar" src="https://randomuser.me/api/portraits/women/45.jpg" [width]="profilePicSize()" [height]="profilePicSize()" />
+  <img
+    class="avatar"
+    src="https://randomuser.me/api/portraits/women/45.jpg"
+    [width]="profilePicSize()"
+    [height]="profilePicSize()"
+  />
   <div class="header-text" [class.hide-header-text]="collapsed()">
     <h2>Your channel</h2>
     <p>Joahn Smith</p>
@@ -7,10 +12,21 @@
 </div>
 <mat-nav-list>
   @for (item of menuItems(); track $index) {
-  <a mat-list-item [routerLink]="item.route" routerLinkActive #rla="routerLinkActive" [activated]="rla.isActive">
-    <mat-icon matListItemIcon>{{ item.icon }} </mat-icon>
+  <a
+    class="menu-item"
+    mat-list-item
+    [routerLink]="item.route"
+    routerLinkActive="selected-menu-item"
+    #rla="routerLinkActive"
+    [activated]="rla.isActive"
+  >
+    <mat-icon
+      [fontSet]="rla.isActive ? 'material-icons' : 'material-icons-outlined'"
+      matListItemIcon
+      >{{ item.icon }}
+    </mat-icon>
     @if (!collapsed()) {
-      <span matListItemTitle class="title">{{ item.label }} </span>
+    <span matListItemTitle class="title">{{ item.label }} </span>
     }
   </a>
   }
