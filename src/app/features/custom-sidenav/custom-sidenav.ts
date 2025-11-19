@@ -2,17 +2,20 @@ import { Component, ChangeDetectionStrategy, computed, input, signal } from '@an
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { MenuItem } from "./menu-item/menu-item";
 
-export type MenuItem = {
+
+export type MenuItemModel = {
   id: number;
   icon: string;
   label: string;
   route?: string;
+  subItems?: MenuItemModel[];
 };
 
 @Component({
   selector: 'app-custom-sidenav',
-  imports: [MatListModule, MatIconModule, RouterLink, RouterLinkActive],
+  imports: [MatListModule, MatIconModule, MenuItem],
   templateUrl: './custom-sidenav.html',
   styleUrl: './custom-sidenav.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -20,7 +23,7 @@ export type MenuItem = {
 export class CustomSidenav {
   readonly collapsed = input.required<boolean>();
 
-  protected readonly menuItems = signal<MenuItem[]>([
+  protected readonly menuItems = signal<MenuItemModel[]>([
     {
       id: 1,
       icon: 'dashboard',
@@ -32,6 +35,11 @@ export class CustomSidenav {
       icon: 'video_library',
       label: 'Content',
       route: 'content',
+      subItems: [
+        { id: 21, icon: 'circle', label: 'Videos', route: 'videos' },
+        { id: 22, icon: 'playlist_play', label: 'Playlists', route: 'playlists' },
+        { id: 23, icon: 'post_add', label: 'Posts', route: 'posts' },
+      ],
     },
     {
       id: 3,

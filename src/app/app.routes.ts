@@ -16,7 +16,21 @@ export const routes: Routes = [
     },
     {
         path: 'content',
-        loadComponent: () => import('./pages/content/content')
+        loadComponent: () => import('./pages/content/content'),
+        children: [
+            {
+                path: 'videos',
+                loadComponent: () => import('./pages/content/videos/videos'),
+            },
+            {
+                path: 'playlists',
+                loadComponent: () => import('./pages/content/playlists/playlists'),
+            },
+            {
+                path: 'posts',
+                loadComponent: () => import('./pages/content/posts/posts'),
+            },
+        ]
     },
     {
         path: 'comments',

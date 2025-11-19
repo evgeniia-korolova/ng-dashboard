@@ -47,6 +47,8 @@
      color: #a507a0;  //  icon's color
 }
 
+
+
 .selected-menu-item .mat-mdc-list-item-title {
   color: #a507a0 !important;
 }
@@ -57,5 +59,6 @@
 }
 
 .mdc-list-item::before {
-  background-color: rgba(140, 17, 75, 0.05) !important;  
+  background-color: rgba(140, 17, 75, 0.05) !important;   
 }
+

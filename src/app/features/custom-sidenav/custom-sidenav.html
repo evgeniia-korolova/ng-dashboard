@@ -12,22 +12,7 @@
 </div>
 <mat-nav-list>
   @for (item of menuItems(); track $index) {
-  <a  
-    class="menu-item"
-    mat-list-item
-    [routerLink]="item.route"
-    routerLinkActive="selected-menu-item"
-    #rla="routerLinkActive"
-    [activated]="rla.isActive"
-  >
-    <mat-icon
-      [fontSet]="rla.isActive ? 'material-icons' : 'material-icons-outlined'"
-      matListItemIcon
-      >{{ item.icon }}
-    </mat-icon>
-    @if (!collapsed()) {
-    <span matListItemTitle class="title">{{ item.label }} </span>
-    }
-  </a>
+    <app-menu-item [item]="item" [collapsed]="collapsed()" />
+  
   }
 </mat-nav-list>
