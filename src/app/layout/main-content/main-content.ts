@@ -1,4 +1,4 @@
-import { Component, computed, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, signal } from '@angular/core';
 
 import { MatIconButton } from '@angular/material/button';
 import { MatDivider } from '@angular/material/divider';
@@ -23,10 +23,19 @@ import { CustomSidenav } from '../../features/custom-sidenav/custom-sidenav';
   ],
   templateUrl: './main-content.html',
   styleUrl: './main-content.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MainContent {
   collapsed = signal(false);
+  currentTheme = signal<'light' | 'dark'>('light');
 
   sidenavWidth = computed(() => (this.collapsed() ? '72px' : '250px'));
   contentWidth = computed(() => (this.collapsed() ? '82px' : '260px'));
+
+  toggleTheme() {
+    const next = this.currentTheme() === 'light' ? 'dark' : 'light';
+    document.documentElement.classList.remove(this.currentTheme());
+    document.documentElement.classList.add(next);
+    this.currentTheme.set(next);
+  }
 }

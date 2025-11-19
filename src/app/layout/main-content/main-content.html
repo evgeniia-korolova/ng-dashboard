@@ -1,8 +1,16 @@
-<mat-toolbar>
+<mat-toolbar color="primary">
   <button matIconButton (click)="collapsed.set(!collapsed())" class="burger">
     <mat-icon>menu</mat-icon>
   </button>
   Responsive sidebar
+  <button matIconButton class="theme-btn" (click)="toggleTheme()">
+    <mat-icon>
+      {{ currentTheme() === 'light' ? 'light_mode' : 'dark_mode' }}
+    </mat-icon>
+  </button>
+
+
+
 </mat-toolbar>
 <mat-drawer-container>
   <mat-drawer [style.width]="sidenavWidth()" mode="side" opened>

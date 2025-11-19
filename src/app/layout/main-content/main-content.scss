@@ -4,8 +4,8 @@
 
 
 mat-toolbar {
-  background: #bd17eb;
-  color: white;
+  // background: #bd17eb;
+  // color: white;
   position: relative;
   z-index: 5;
 }
@@ -13,8 +13,8 @@ mat-toolbar {
 mat-drawer {
   // margin-block: 16px;
   border-right: none;
-  background: #f3d3fc;
-  color: white;
+  // background: #f3d3fc;
+  // color: white;
   border-radius: 10px;
   padding: 6px;
   
@@ -60,8 +60,7 @@ mat-drawer, mat-drawer-content {
 
 
 .burger {
-  margin-right: 20px;
-  color: white;
+  margin-right: 20px;  
 }
 
 .name {
@@ -83,4 +82,8 @@ mat-divider {
 
 .mat-drawer-transition .mat-drawer {
   transition: all 500ms ease-in-out !important;
+}
+
+.theme-btn {
+  margin-left: auto;
 }

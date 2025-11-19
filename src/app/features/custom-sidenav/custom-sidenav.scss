@@ -42,14 +42,20 @@
 
 .selected-menu-item {
     border-left: 5px solid;
-    border-left-color: purple;
-    background-color: rgba(252, 157, 201, 0.05) !important;
+    border-left-color: #a507a0;
+    background-color: rgb(252, 237, 253) !important;
+     color: #a507a0;  //  icon's color
 }
 
-.mdc-list-item--with-leading-icon .mdc-list-item__start {
-    color: purple !important;
+.selected-menu-item .mat-mdc-list-item-title {
+  color: #a507a0 !important;
 }
 
-.material-icons {
-    color: white;
+// hover
+.mdc-list-item--activated::before {
+  background-color: #fefefe !important;  
+}
+
+.mdc-list-item::before {
+  background-color: rgba(140, 17, 75, 0.05) !important;  
 }
