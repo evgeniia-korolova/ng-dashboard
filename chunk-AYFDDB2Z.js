@@ -1,0 +1,1 @@
+import{Eb as d,Wa as o,ob as s,pb as n}from"./chunk-WVGTSCNO.js";var a=class t{static \u0275fac=function(e){return new(e||t)};static \u0275cmp=o({type:t,selectors:[["app-dashboard"]],decls:2,vars:0,template:function(e,i){e&1&&(s(0,"h1"),d(1,"dashboard works!"),n())},encapsulation:2})};export{a as default};
