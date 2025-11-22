@@ -1,5 +1,5 @@
 import { Route, Routes } from '@angular/router';
-import { MenuItemModel } from './shared/manu-item.model';
+import { MenuItemModel } from './shared/models/menu-item.model';
 import { menuItems } from './shared/menu-items.data';
 
 const itemToRoute = (i: MenuItemModel): Route => {

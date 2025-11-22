@@ -81,6 +81,15 @@ html.dark .mat-mdc-list-item-interactive:hover mat-icon {
   color: #ee078e !important; /* белый цвет */
 }
 
+.m-0 {
+  margin: 0;
+}
+
+.mat-elevation-z3 {
+  @include mat.elevation(3);
+}
+
+
 
 
 
