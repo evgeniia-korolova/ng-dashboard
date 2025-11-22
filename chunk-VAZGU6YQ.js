@@ -1,0 +1,1 @@
+import{Hb as a,Ya as n,qb as m,rb as r}from"./chunk-L2FN7GL6.js";var o=class t{static \u0275fac=function(e){return new(e||t)};static \u0275cmp=n({type:t,selectors:[["app-long-form"]],decls:2,vars:0,template:function(e,i){e&1&&(m(0,"p"),a(1,"long-form works!"),r())},encapsulation:2})};export{o as default};

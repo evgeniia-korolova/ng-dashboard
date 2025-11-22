@@ -1,1 +1,0 @@
-import{Eb as a,Wa as n,ob as o,pb as s}from"./chunk-WVGTSCNO.js";var t=class m{static \u0275fac=function(e){return new(e||m)};static \u0275cmp=n({type:m,selectors:[["app-comments"]],decls:2,vars:0,template:function(e,i){e&1&&(o(0,"p"),a(1,"comments works!"),s())},encapsulation:2})};export{t as default};
