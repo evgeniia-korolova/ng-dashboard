@@ -27,3 +27,11 @@
     <mat-button-toggle [value]="4">4</mat-button-toggle>
   </mat-button-toggle-group>
 </div>
+
+<button matIconButton class="move-forward-btn" (click)="dashboardService.moveWidgetToRight(data().id)" >
+  <mat-icon>chevron_right</mat-icon>
+</button>
+
+<button matIconButton class="move-backwards-btn" (click)="dashboardService.moveWidgetToLeft(data().id)">
+  <mat-icon>chevron_left</mat-icon>
+</button>
