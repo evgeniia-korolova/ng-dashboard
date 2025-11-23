@@ -1,6 +1,21 @@
-<h1>dashboard works!</h1>
+<div class="header">
+  <h1>Channel Dashboard</h1>
+  <button matButton="filled" class="mat-elevation-z3" [matMenuTriggerFor]="widgwtMenu">
+    <mat-icon>add_circle</mat-icon>
+    Add widget
+  </button>
+  <mat-menu #widgwtMenu="matMenu">
+    @for (widget of dashboardService.widgetsToAdd(); track widget.id) {
+    <button mat-menu-item (click)="dashboardService.addWidget(widget)">{{ widget.label }}</button>
+    } @empty {
+        <button mat-menu-item >No widgets to add</button>
+    }
+  </mat-menu>
+</div>
 <div class="dashboard-widgets">
-  @for (widget of widgets; track widget.id) {
+  @for (widget of dashboardService.addedWidgets(); track widget.id) {
   <app-dashboard-widget [data]="widget" />
   }
 </div>
+
+<!-- class="mat-elevation-z3" -->

@@ -11,5 +11,11 @@
     box-sizing: border-box;
     border-radius: inherit;
     overflow: hidden;
-    margin-bottom: 20px;
+    margin-bottom: 20px;    
+}
+
+.settings-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
 }

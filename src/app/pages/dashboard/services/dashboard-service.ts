@@ -1,4 +1,4 @@
-import { Injectable, signal } from '@angular/core';
+import { computed, Injectable, signal } from '@angular/core';
 import { Widget } from '../../../shared/models/dashboard.model';
 import { Subscribers } from '../wedgets/subscribers/subscribers';
 import { Views } from '../wedgets/views/views';
@@ -18,4 +18,37 @@ export class DashboardService {
       content: Views
     },
   ])
+
+  addedWidgets = signal<Widget[]>([
+    {
+      id: 3,
+      label: 'Sudscribers',
+      content: Subscribers,
+      
+    },
+    {
+      id: 4,
+      label: 'Views',
+      content: Views,
+      rows: 2,
+      columns: 2,
+    },
+  ])
+  widgetsToAdd = computed(() => {
+    const addedIds = this.addedWidgets().map(widg => widg.id);
+    return this.widgets().filter(widg => !addedIds.includes(widg.id))
+  })
+
+  addWidget(widget: Widget) {
+    this.addedWidgets.set([...this.addedWidgets(), {...widget}])
+  }
+
+  updateWidget(id: number, widget: Partial<Widget>) {
+    const index = this.addedWidgets().findIndex(widg => widg.id === id)
+    if(index !== -1) {
+      const newWidgets = [...this.addedWidgets()]
+      newWidgets[index] = {... newWidgets[index], ...widget}
+      this.addedWidgets.set(newWidgets)
+    }
+  }
 }
