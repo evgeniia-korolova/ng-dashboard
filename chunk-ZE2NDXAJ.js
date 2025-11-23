@@ -1,0 +1,1 @@
+import{Tb as n,db as a,yb as l,zb as i}from"./chunk-GUGTRKIO.js";var e=class s{static \u0275fac=function(t){return new(t||s)};static \u0275cmp=a({type:s,selectors:[["app-playlists"]],decls:2,vars:0,template:function(t,p){t&1&&(l(0,"p"),n(1,"playlists works!"),i())},encapsulation:2})};export{e as default};
