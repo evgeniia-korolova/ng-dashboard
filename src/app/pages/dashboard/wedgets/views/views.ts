@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'app-views',
-  imports: [],
+  imports: [MatIcon],
   templateUrl: './views.html',
   styleUrl: './views.scss',
 })

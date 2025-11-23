@@ -28,10 +28,14 @@
   </mat-button-toggle-group>
 </div>
 
-<button matIconButton class="move-forward-btn" (click)="dashboardService.moveWidgetToRight(data().id)" >
+<button matIconButton class="move-forward-btn" (click)="dashboardService.moveWidgetToRight(data().id)"  >
   <mat-icon>chevron_right</mat-icon>
 </button>
 
 <button matIconButton class="move-backwards-btn" (click)="dashboardService.moveWidgetToLeft(data().id)">
   <mat-icon>chevron_left</mat-icon>
+</button>
+
+<button matIconButton class="remove-widget-btn" (click)="dashboardService.removeWidget(data().id)" >
+  <mat-icon>delete</mat-icon>
 </button>
