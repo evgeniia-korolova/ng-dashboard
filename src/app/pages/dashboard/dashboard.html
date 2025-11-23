@@ -12,7 +12,7 @@
     }
   </mat-menu>
 </div>
-<div class="dashboard-widgets">
+<div #dashboard class="dashboard-widgets">
   @for (widget of dashboardService.addedWidgets(); track widget.id) {
   <app-dashboard-widget [data]="widget" />
   }
