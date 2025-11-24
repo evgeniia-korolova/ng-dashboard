@@ -1,0 +1,1 @@
+import{Bb as o,Cb as s,Wb as a,fb as n}from"./chunk-BTC4HD3I.js";var t=class m{static \u0275fac=function(e){return new(e||m)};static \u0275cmp=n({type:m,selectors:[["app-comments"]],decls:2,vars:0,template:function(e,i){e&1&&(o(0,"p"),a(1,"comments works!"),s())},encapsulation:2})};export{t as default};
