@@ -78,6 +78,12 @@ html.dark {
   --mat-button-toggle-height: 24px;  
 }
 
+.cdk-drop-list-dragging {
+  opacity: 0.5;
+  border-left: 5px solid #a507a0;
+  padding-left: 8px;
+}
+
 // html.light {
 //   --mat-sys-primary: #a507a0;          /* основной цвет */
 //   --mat-sys-on-primary: #ffffff;

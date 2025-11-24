@@ -1,13 +1,3 @@
-import Analitics from '../pages/analitics/analitics';
-import Comments from '../pages/comments/comments';
-import Content from '../pages/content/content';
-import Playlists from '../pages/content/playlists/playlists';
-import Posts from '../pages/content/posts/posts';
-import LongForm from '../pages/content/videos/long-form/long-form';
-import Shorts from '../pages/content/videos/shorts/shorts';
-import Videos from '../pages/content/videos/videos';
-import Dashboard from '../pages/dashboard/dashboard';
-
 export const menuItems = [
   {
     id: 1,
@@ -75,7 +65,7 @@ export const menuItems = [
     label: 'Analitics',
     route: 'analitics',
     // component: Analitics,
-    loadComponent: () => import('../pages/analitics/analitics'),
+    loadComponent: () => import('../pages/analytics/analitics'),
   },
   {
     id: 4,

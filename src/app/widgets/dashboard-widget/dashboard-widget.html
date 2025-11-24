@@ -2,7 +2,10 @@
   class="container mat-elevation-z3"
   [style.background-color]="data().backgroundColor?.[theme()] ?? 'inherit'"
   [style.color]="data().color?.[theme()] ?? 'inherit'"
+  cdkDrag
+  cdkDragPreviewContainer="parent"
 >
+<div class="widget-header">
   <h3 class="m-0">{{ data().label }}</h3>
   <button
     matIconButton
@@ -12,10 +15,12 @@
   >
     <mat-icon>settings</mat-icon>
   </button>
+</div>
   <ng-container [ngComponentOutlet]="data().content" />
   @if (showOptions()) {
   <app-widget-options [(showOptions)]="showOptions" [data]="data()" />
   }
+  <div *cdkDragPlaceholder></div>
 </div>
 
 

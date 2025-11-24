@@ -5,10 +5,11 @@ import { Widget } from '../../shared/models/dashboard.model';
 import { NgComponentOutlet } from '@angular/common';
 import { WidgetOptions } from "./widget-options/widget-options";
 import { ThemeService } from '../../core/services/theme-service';
+import { CdkDrag, CdkDragPlaceholder } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-dashboard-widget',
-  imports: [NgComponentOutlet, MatButtonModule, MatIcon, WidgetOptions],
+  imports: [NgComponentOutlet, MatButtonModule, MatIcon, WidgetOptions, CdkDrag, CdkDragPlaceholder],
   templateUrl: './dashboard-widget.html',
   styleUrl: './dashboard-widget.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -223,4 +223,24 @@ export class DashboardService {
 
     localStorage.setItem('dashboardWidgets', JSON.stringify(widgetsWithoutContent));
   });
+
+  updateWidgetPosition(sourceWidgetId: number, targetWidgetId: number) {
+    const sourceIndex = this.addedWidgets().findIndex(widg => widg.id === sourceWidgetId)
+    if(sourceIndex === -1) {
+      return
+    }
+
+    const newWidgets = [...this.addedWidgets()]
+    const sourceWidget = newWidgets.splice(sourceIndex, 1)[0];
+
+    const targetIndex = newWidgets.findIndex(widg => widg.id === targetWidgetId);
+    if(targetWidgetId === -1) {
+      return
+    }
+
+    const insertAt = targetIndex === sourceIndex ? targetIndex + 1 : targetIndex;
+
+    newWidgets.splice(insertAt, 0, sourceWidget);
+    this.addedWidgets.set(newWidgets)
+  }
 }
