@@ -3,9 +3,7 @@
 }
 
 
-mat-toolbar {
-  // background: #bd17eb;
-  // color: white;
+mat-toolbar {  
   position: relative;
   z-index: 5;
 }
@@ -41,7 +39,7 @@ mat-drawer, mat-drawer-content {
 
 .burger {
   margin-right: 20px;
-  color: white;  
+  // color: white;  
 }
 
 .name {
@@ -67,5 +65,5 @@ mat-divider {
 
 .theme-btn {
   margin-left: auto;
-  color: white;
+  // color: white;
 }

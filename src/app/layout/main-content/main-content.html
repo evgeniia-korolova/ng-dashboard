@@ -1,4 +1,4 @@
-<mat-toolbar >
+<mat-toolbar>
   <button matIconButton (click)="collapsed.set(!collapsed())" class="burger">
     <mat-icon>menu</mat-icon>
   </button>
@@ -8,13 +8,11 @@
       {{ currentTheme() === 'light' ? 'light_mode' : 'dark_mode' }}
     </mat-icon>
   </button>
-
-
-
 </mat-toolbar>
+
 <mat-drawer-container>
   <mat-drawer [style.width]="sidenavWidth()" mode="side" opened>
-    <app-custom-sidenav [collapsed]="collapsed()"/>
+    <app-custom-sidenav [collapsed]="collapsed()" />
   </mat-drawer>
   <mat-drawer-content [style.margin-left]="contentWidth()">
     <div class="content">

@@ -74,15 +74,7 @@ export class DashboardService {
       label: 'Channel Analytics',
       content: Analytics,
       rows: 2,
-      columns: 2,
-      backgroundColor: {
-        light: '#fdf7fd',
-        dark: '#fdf7fd',
-      },
-      color: {
-        light: 'black',
-        dark: 'black',
-      },
+      columns: 2,      
     },
   ]);
 
