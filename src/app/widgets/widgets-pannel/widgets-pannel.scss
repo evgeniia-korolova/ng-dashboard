@@ -1,0 +1,40 @@
+:host {
+    background: var(--mat-sys-primary-container);
+    color: var(--mat-sys-on-primary-container);
+    position: absolute;
+    right: 16px;
+    top: 100px;
+    width: 300px;
+    z-index: 2;
+    border-radius: 16px;
+}
+
+.widget-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    background: var(--mat-sys-surface-container);
+    color: var(--mat-sys-inverse-surface);
+    cursor: pointer;
+    padding: 8px 16px;
+    font-size: 1rem;
+}
+
+.widget-box:hover {
+    background: var(--mat-sys-surface-container-high);
+}
+
+.widgets-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 24px;
+    border-radius: 8px;
+}
+
+.widgets-pannel-header {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}

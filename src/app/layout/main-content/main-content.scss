@@ -6,6 +6,7 @@
 mat-toolbar {  
   position: relative;
   z-index: 5;
+  background: var(--mat-sys-primary-container);
 }
 
 mat-drawer {  
@@ -26,20 +27,15 @@ mat-drawer, mat-drawer-content {
 
 .content {
   height: calc(100vh - 100px);
-  border-radius: 10px;
-  // margin-block: 16px;
+  border-radius: 10px; 
   padding: 16px;
-  overflow: auto;
-  // display: flex;  
-  // font-size: 2rem;
-  // color: lightgray;  
+  overflow: auto;    
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 
 .burger {
-  margin-right: 20px;
-  // color: white;  
+  margin-right: 20px;   
 }
 
 .name {
@@ -64,6 +60,5 @@ mat-divider {
 }
 
 .theme-btn {
-  margin-left: auto;
-  // color: white;
+  margin-left: auto;  
 }

@@ -2,20 +2,20 @@ import { Component, ElementRef, inject, OnDestroy, OnInit, viewChild } from '@an
 import { DashboardWidget } from '../../widgets/dashboard-widget/dashboard-widget';
 import { DashboardService } from './services/dashboard-service';
 import { MatButtonModule } from '@angular/material/button';
-import { MatIcon } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { wrapGrid } from 'animate-css-grid';
 import { CdkDragDrop, CdkDropList, CdkDropListGroup } from '@angular/cdk/drag-drop';
+import { DashboardHeader } from './dashboard-header/dashboard-header';
 
 @Component({
   selector: 'app-dashboard',
   imports: [
     DashboardWidget,
     MatButtonModule,
-    MatIcon,
     MatMenuModule,
     CdkDropList,
     CdkDropListGroup,
+    DashboardHeader,
   ],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.scss',
@@ -24,25 +24,29 @@ import { CdkDragDrop, CdkDropList, CdkDropListGroup } from '@angular/cdk/drag-dr
 export default class Dashboard implements OnInit, OnDestroy {
   dashboardService = inject(DashboardService);
   dashboard = viewChild.required<ElementRef>('dashboard');
-  // clearAnimations: () => void = () => {};
-  clearAnimations = () =>  {};
 
-
+  clearAnimations = () => {};
 
   ngOnInit(): void {
-    // wrapGrid(this.dashboard().nativeElement, {duration: 300})
     const { unwrapGrid } = wrapGrid(this.dashboard().nativeElement, { duration: 300 });
     this.clearAnimations = unwrapGrid;
-
   }
 
   ngOnDestroy(): void {
     this.clearAnimations();
   }
-  
 
   drop(event: CdkDragDrop<number, any>) {
-    const {previousContainer, container} = event;
-    this.dashboardService.updateWidgetPosition(previousContainer.data, container.data)
+    const {
+      previousContainer,
+      container,
+      item: { data },
+    } = event;
+
+    if (data) {
+      this.dashboardService.insertWidgetAtPosition(data, container.data);
+      return;
+    }
+    this.dashboardService.updateWidgetPosition(previousContainer.data, container.data);
   }
 }

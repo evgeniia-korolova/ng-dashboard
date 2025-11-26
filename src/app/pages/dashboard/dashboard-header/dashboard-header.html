@@ -1,0 +1,17 @@
+<div class="header">
+  <h1>Channel Dashboard</h1>
+  <button matButton="filled" mat-raised-button (click)="widgetsOpen.set(!widgetsOpen())">
+    @if(widgetsOpen()) {
+    <mat-icon>close</mat-icon>
+    } @else {
+    <mat-icon>add_circle</mat-icon>
+    } Widgets
+  </button>
+
+  @if (widgetsOpen()) {
+  <app-widgets-pannel 
+  cdkDropList 
+  (cdkDropListDropped)="widgetPutBack($event)" 
+  cdkDrag />
+  }
+</div>
