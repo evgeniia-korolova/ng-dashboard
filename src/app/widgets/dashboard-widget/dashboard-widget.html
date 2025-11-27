@@ -1,12 +1,12 @@
 <div
-  class="container mat-elevation-z3"
+  class="w-full h-full relative p-8 overflow-hidden box-border rounded-[inherit] mat-elevation-z3"
   [style.background-color]="data().backgroundColor?.[theme()] ?? 'var(--mat-sys-surface-bright)'"
   [style.color]="data().color?.[theme()] ?? 'inherit'"
   cdkDrag
   cdkDragPreviewContainer="parent"
 >
-<div class="widget-header">
-  <h3 class="m-0">{{ data().label }}</h3>
+<div class="cursor-move">
+  <h3 class="mb-3">{{ data().label }}</h3>
   <button
     matIconButton
     class="settings-button"
