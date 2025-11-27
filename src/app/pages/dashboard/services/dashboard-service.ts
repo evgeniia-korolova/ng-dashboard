@@ -1,10 +1,10 @@
 import { computed, effect, Injectable, signal } from '@angular/core';
 import { Widget } from '../../../shared/models/dashboard.model';
-import { Subscribers } from '../wedgets/subscribers/subscribers';
-import { Views } from '../wedgets/views/views';
-import { WatchTime } from '../wedgets/watch-time/watch-time';
-import { Revenue } from '../wedgets/revenue/revenue';
-import { Analytics } from '../wedgets/analytics/analytics';
+import { Subscribers } from '../widgets/subscribers/subscribers';
+import { Views } from '../widgets/views/views';
+import { WatchTime } from '../widgets/watch-time/watch-time';
+import { Revenue } from '../widgets/revenue/revenue';
+import { Analytics } from '../widgets/analytics/analytics';
 
 @Injectable()
 export class DashboardService {
@@ -74,15 +74,7 @@ export class DashboardService {
       label: 'Channel Analytics',
       content: Analytics,
       rows: 2,
-      columns: 2,
-      backgroundColor: {
-        light: '#fdf7fd',
-        dark: '#fdf7fd',
-      },
-      color: {
-        light: 'black',
-        dark: 'black',
-      },
+      columns: 2,      
     },
   ]);
 
@@ -213,6 +205,20 @@ export class DashboardService {
     this.addedWidgets.set(this.addedWidgets().filter((widg) => widg.id !== id));
   }
 
+  insertWidgetAtPosition(sourceWidgetId: number, destWidgetId: number) {
+    const widgetToAdd = this.widgetsToAdd().find(widg => widg.id === sourceWidgetId);
+    if(!widgetToAdd) {
+      return;
+    }
+
+    const indexOfDestWidget = this.addedWidgets().findIndex(widg => widg.id === destWidgetId);
+    const positionToAdd = indexOfDestWidget === -1 ? this.addedWidgets().length : indexOfDestWidget;
+
+    const newWidgets = [...this.addedWidgets()]
+    newWidgets.splice(positionToAdd, 0, widgetToAdd);
+    this.addedWidgets.set(newWidgets)
+  }
+
   saveWidgets = effect(() => {
     const widgetsWithoutContent: Partial<Widget>[] = this.addedWidgets().map((widg) => ({
       ...widg,
@@ -243,4 +249,6 @@ export class DashboardService {
     newWidgets.splice(insertAt, 0, sourceWidget);
     this.addedWidgets.set(newWidgets)
   }
+
+
 }

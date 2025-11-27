@@ -1,22 +1,14 @@
-<div class="header">
-  <h1>Channel Dashboard</h1>
-  <button matButton="filled" class="mat-elevation-z3" [matMenuTriggerFor]="widgwtMenu">
-    <mat-icon>add_circle</mat-icon>
-    Add widget
-  </button>
-  <mat-menu #widgwtMenu="matMenu">
-    @for (widget of dashboardService.widgetsToAdd(); track widget.id) {
-    <button mat-menu-item (click)="dashboardService.addWidget(widget)">{{ widget.label }}</button>
-    } @empty {
-        <button mat-menu-item >No widgets to add</button>
+<div cdkDropListGroup>
+  <app-dashboard-header />
+  <div #dashboard class="dashboard-widgets">
+    @for (widget of dashboardService.addedWidgets(); track widget.id) {
+    <app-dashboard-widget
+      [data]="widget"
+      cdkDropList
+      (cdkDropListDropped)="drop($event)"
+      [cdkDropListData]="widget.id"
+    />
     }
-  </mat-menu>
+    <div cdkDropList (cdkDropListDropped)="drop($event)"></div>
+  </div>
 </div>
-<div #dashboard class="dashboard-widgets" cdkDropListGroup>
-  @for (widget of dashboardService.addedWidgets(); track widget.id) {
-  <app-dashboard-widget cdkDropList [data]="widget" (cdkDropListDropped)="drop($event)" [cdkDropListData]="widget.id" />
-  }
-
-</div>
-
-<!-- class="mat-elevation-z3" -->

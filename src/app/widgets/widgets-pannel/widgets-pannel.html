@@ -1,0 +1,12 @@
+<div class="widgets-list">
+    <div class="widgets-pannel-header">
+        <mat-icon>drag_indicator</mat-icon>
+        Widgets
+    </div>
+    @for (widget of dashboardService.widgetsToAdd(); track widget.id) {
+        <div class="widget-box" cdkDrag [cdkDragData]="widget.id" >
+            {{widget.label}}
+            <div *cdkDragPlaceholder></div>
+        </div>
+    }
+</div>

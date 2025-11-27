@@ -1,6 +1,6 @@
 <div
   class="container mat-elevation-z3"
-  [style.background-color]="data().backgroundColor?.[theme()] ?? 'inherit'"
+  [style.background-color]="data().backgroundColor?.[theme()] ?? 'var(--mat-sys-surface-bright)'"
   [style.color]="data().color?.[theme()] ?? 'inherit'"
   cdkDrag
   cdkDragPreviewContainer="parent"
@@ -11,7 +11,7 @@
     matIconButton
     class="settings-button"
     (click)="showOptions.set(true)"
-    [style.color]="data().color?.[theme()] ?? 'inherit'"
+    [style.color]="data().color?.[theme()] ?? 'var(--mat-sys-inverse-surface)'"
   >
     <mat-icon>settings</mat-icon>
   </button>

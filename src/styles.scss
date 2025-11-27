@@ -5,34 +5,18 @@
 // custom components at https://material.angular.dev/guide/theming
 @use '@angular/material' as mat;
 
-// html {
-//   @include mat.theme((
-//     color: (
-//       primary: mat.$magenta-palette,
-//       tertiary: mat.$violet-palette,
-//     ),
-//     typography: Roboto,
-//     density: 0,
-//   ));
+
+
+// body {
+  
+//   background-color: var(--mat-sys-surface);
+//   color: var(--mat-sys-on-surface);
+//   font: var(--mat-sys-body-medium);
+
+  
+//   margin: 0;
 // }
 
-body {
-  // Default the application to a light color theme. This can be changed to
-  // `dark` to enable the dark color theme, or to `light dark` to defer to the
-  // user's system settings.
-  // color-scheme: light;
-
-  // Set a default background, font and text colors for the application using
-  // Angular Material's system-level CSS variables. Learn more about these
-  // variables at https://material.angular.dev/guide/system-variables
-  background-color: var(--mat-sys-surface);
-  color: var(--mat-sys-on-surface);
-  font: var(--mat-sys-body-medium);
-
-  // Reset the user agent margin.
-  margin: 0;
-}
-/* You can add global styles to this file, and also import other style files */
 
 html,
 body {
@@ -44,89 +28,153 @@ body {
   font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
 
-html.light {
-  color-scheme: light;
-  @include mat.theme(
-    (
-      color: mat.$violet-palette,
-      typography: Roboto,
-      density: 0,
-    )
-  );
-  --mat-toolbar-container-background-color: rgb(125, 0, 250);
-  --mat-toolbar-container-text-color: #f8f3f9;
-  --mat-button-toggle-selected-state-text-color: rgb(125, 0, 250);
-  --mat-button-toggle-label-text-size: 14px;
-  --mat-button-foreground-color: #a507a0; 
-  --mat-button-toggle-height: 24px; 
+$custom-theme: mat.define-theme(
+  (
+    color: (      
+      use-system-variables: true,
+    ),
+  )
+);
+
+html {
+  @include mat.core-theme($custom-theme);
+  @include mat.toolbar-theme($custom-theme);
+  @include mat.button-theme($custom-theme);
+  @include mat.icon-button-theme($custom-theme);
+  @include mat.sidenav-theme($custom-theme);
+  @include mat.tabs-theme($custom-theme);
+  @include mat.list-theme($custom-theme);
+  @include mat.card-theme($custom-theme);
+  @include mat.table-theme($custom-theme);
+  @include mat.select-theme($custom-theme);
+  @include mat.form-field-theme($custom-theme);
+  @include mat.button-toggle-theme($custom-theme);
+  @include mat.menu-theme($custom-theme);
+  @include mat.divider-theme($custom-theme);
+  
 }
 
-html.dark {
-  color-scheme: dark;
-  @include mat.theme(
-    (
-      color: mat.$violet-palette,
-      typography: Roboto,
-      density: 0,
-    )
-  );
-  --mat-toolbar-container-background-color: #a507a0;
-  --mat-sidenav-content-background-color: #302f30;
-  --mat-button-toggle-text-color: #302f30;
-  --mat-button-toggle-selected-state-background-color: #a507a0;
-  --mat-button-toggle-label-text-size: 14px;  
-  --mat-button-toggle-height: 24px;  
+html {
+  --mat-sys-primary: rgb(133 75 112);
+  --mat-sys-surface-tint: rgb(133 75 112);
+  --mat-sys-on-primary: rgb(255 255 255);
+  --mat-sys-primary-container: rgb(255 216 236);
+  --mat-sys-on-primary-container: rgb(106 52 87);
+  --mat-sys-secondary: rgb(112 87 101);
+  --mat-sys-on-secondary: rgb(255 255 255);
+  --mat-sys-secondary-container: rgb(251 217 234);
+  --mat-sys-on-secondary-container: rgb(87 64 77);
+  --mat-sys-tertiary: rgb(128 84 62);
+  --mat-sys-on-tertiary: rgb(255 255 255);
+  --mat-sys-tertiary-container: rgb(255 219 203);
+  --mat-sys-on-tertiary-container: rgb(101 61 40);
+  --mat-sys-error: rgb(186 26 26);
+  --mat-sys-on-error: rgb(255 255 255);
+  --mat-sys-error-container: rgb(255 218 214);
+  --mat-sys-on-error-container: rgb(147 0 10);
+  --mat-sys-background: rgb(255 248 249);
+  --mat-sys-on-background: rgb(33 26 29);
+  --mat-sys-surface: rgb(255 248 249);
+  --mat-sys-on-surface: rgb(33 26 29);
+  --mat-sys-surface-variant: rgb(240 222 229);
+  --mat-sys-on-surface-variant: rgb(79 68 73);
+  --mat-sys-outline: rgb(129 115 122);
+  --mat-sys-outline-variant: rgb(211 194 201);
+  --mat-sys-shadow: rgb(0 0 0);
+  --mat-sys-scrim: rgb(0 0 0);
+  --mat-sys-inverse-surface: rgb(54 46 50);
+  --mat-sys-inverse-on-surface: rgb(252 237 242);
+  --mat-sys-inverse-primary: rgb(249 177 219);
+  --mat-sys-primary-fixed: rgb(255 216 236);
+  --mat-sys-on-primary-fixed: rgb(55 7 42);
+  --mat-sys-primary-fixed-dim: rgb(249 177 219);
+  --mat-sys-on-primary-fixed-variant: rgb(106 52 87);
+  --mat-sys-secondary-fixed: rgb(251 217 234);
+  --mat-sys-on-secondary-fixed: rgb(41 21 33);
+  --mat-sys-secondary-fixed-dim: rgb(222 190 206);
+  --mat-sys-on-secondary-fixed-variant: rgb(87 64 77);
+  --mat-sys-tertiary-fixed: rgb(255 219 203);
+  --mat-sys-on-tertiary-fixed: rgb(49 19 3);
+  --mat-sys-tertiary-fixed-dim: rgb(244 186 158);
+  --mat-sys-on-tertiary-fixed-variant: rgb(101 61 40);
+  --mat-sys-surface-dim: rgb(228 214 219);
+  --mat-sys-surface-bright: rgb(255 248 249);
+  --mat-sys-surface-container-lowest: rgb(255 255 255);
+  --mat-sys-surface-container-low: rgb(254 240 245);
+  --mat-sys-surface-container: rgb(249 234 239);
+  --mat-sys-surface-container-high: rgb(243 229 234);
+  --mat-sys-surface-container-highest: rgb(237 223 228);
+  // --mat-toolbar-container-background-color: rgb(251 217 234);
+  // mat-icons hover
+  // --mat-icon-button-hover-state-layer-opacity: 0.08;
+  // --mat-icon-button-focus-state-layer-opacity: 0.12;
+  // --mat-icon-button-pressed-state-layer-opacity: 0.16;
+
 }
+
+.dark {
+  --mat-sys-surface-tint: rgb(249 177 219);
+  --mat-sys-primary: rgb(249 177 219);
+  --mat-sys-on-primary: rgb(80 30 64);
+  --mat-sys-primary-container: rgb(106 52 87);
+  --mat-sys-on-primary-container: rgb(255 216 236);
+  --mat-sys-secondary: rgb(222 190 206);
+  --mat-sys-on-secondary: rgb(63 42 54);
+  --mat-sys-secondary-container: rgb(87 64 77);
+  --mat-sys-on-secondary-container: rgb(251 217 234);
+  --mat-sys-tertiary: rgb(244 186 158);
+  --mat-sys-on-tertiary: rgb(75 39 20);
+  --mat-sys-tertiary-container: rgb(101 61 40);
+  --mat-at-sys-error: rgb(255 180 171);
+  --mat-sys-on-error: rgb(105 0 5);
+  --mat-sys-error-container: rgb(147 0 10);
+  --mat-sys-on-error-container: rgb(255 218 214);
+  --mat-sys-background: rgb(24 17 21);
+  --mat-sys-on-background: rgb(237 223 228);
+  --mat-sys-surface: rgb(24 17 21);
+  --mat-sys-on-surface: rgb(237 223 228);
+  --mat-sys-surface-variant: rgb(79 68 73);
+  --mat-sys-on-surface-variant: rgb(211 194 201);
+  --mat-sys-outline: rgb(156 141 147);
+  --mat-sys-outline-variant: rgb(79 68 73);
+  --mat-sys-shadow: rgb(0 0 0);
+  --mat-sys-scrim: rgb(0 0 0);
+  --mat-sys-inverse-surface: rgb(237 223 228);
+  --mat-sys-inverse-on-surface: rgb(54 46 50);
+  --mat-sys-inverse-primary: rgb(133 75 112);
+  --mat-sys-primary-fixed: rgb(255 216 236);
+  --mat-sys-on-primary-fixed: rgb(55 7 42);
+  --mat-sys-primary-fixed-dim: rgb(249 177 219);
+  --mat-sys-on-primary-fixed-variant: rgb(106 52 87);
+  --mat-sys-secondary-fixed: rgb(251 217 234);
+  --mat-sys-on-secondary-fixed: rgb(41 21 33);
+  --mat-sys-secondary-fixed-dim: rgb(222 190 206);
+  --mat-sys-on-secondary-fixed-variant: rgb(87 64 77);
+  --mat-sys-tertiary-fixed: rgb(255 219 203);
+  --mat-sys-on-tertiary-fixed: rgb(49 19 3);
+  --mat-sys-tertiary-fixed-dim: rgb(244 186 158);
+  --mat-sys-on-tertiary-fixed-variant: rgb(101 61 40);
+  --mat-sys-surface-dim: rgb(24 17 21);
+  --mat-sys-surface-bright: rgb(63 55 59);
+  --mat-sys-surface-container-lowest: rgb(19 12 16);
+  --mat-sys-surface-container-low: rgb(33 26 29);
+  --mat-sys-surface-container: rgb(37 30 33);
+  --mat-sys-surface-container-high: rgb(48 40 44);
+  --mat-sys-surface-container-highest: rgb(59 50 54);
+  // --mat-toolbar-container-background-color: #a507a0;
+  --mat-icon-button-hover-state-layer-opacity: 0.08;
+  --mat-icon-button-focus-state-layer-opacity: 0.12;
+  --mat-icon-button-pressed-state-layer-opacity: 0.16;
+  --mat-sidenav-content-background-color: rgb(46, 45, 45);
+}
+
 
 .cdk-drop-list-dragging {
   opacity: 0.5;
   border-left: 5px solid #a507a0;
+  border-left: 5px solid var(--mat-sys-primary);
   padding-left: 8px;
 }
-
-// html.light {
-//   --mat-sys-primary: #a507a0;          /* основной цвет */
-//   --mat-sys-on-primary: #ffffff;
-//   // --mat-sys-primary-hover: #8c068c;
-//        /* цвет текста на primary */
-//   --mat-sys-surface: #fcfbf9;
-//   --mat-sys-on-surface: #56046b;
-//   --mat-sys-background: #fefaff;
-//   --mat-toolbar-container-background-color: #a507a0;
-//   --mat-toolbar-container-text-color: #f8f3f9;
-//   --hover-state-layer-opacity: 0,02;
-// }
-
-// html.dark {
-//   --mat-sys-primary: #a507a0;
-//   --mat-sys-on-primary: #fefefe;
-//   --mat-sys-surface: #131316;
-//   // --mat-sys-primary-hover: #c218c2;
-//   --mat-sys-on-surface: #e5e1e6;
-//   --mat-sys-background: #656363;
-//   --mat-toolbar-container-background-color: #a507a0;
-//   --mat-toolbar-container-text-color: #fefefe;
-// }
-
-// html.dark .mat-mdc-list-item-interactive:hover::before {
-//   background-color: rgb(248, 197, 246) !important;
-//   opacity: 0.32 !important;
-// }
-
-// html.dark .mat-mdc-list-item-interactive:focus::before,
-// html.dark .mat-mdc-list-item-interactive:focus-visible::before {
-//   background-color: transparent !important;
-//   opacity: 0 !important;
-// }
-
-// html.dark .mat-mdc-list-item-interactive.mdc-list-item--activated::before {
-//   background-color: rgba(83, 63, 72, 0.05) !important;
-// }
-
-// html.dark .mat-mdc-list-item-interactive:hover .mat-mdc-list-item-title,
-// html.dark .mat-mdc-list-item-interactive:hover mat-icon {
-//   color: #ee078e !important; /* белый цвет */
-// }
 
 .m-0 {
   margin: 0;
