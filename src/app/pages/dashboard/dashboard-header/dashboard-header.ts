@@ -10,8 +10,7 @@ import { WidgetsPannel } from "../../../widgets/widgets-pannel/widgets-pannel";
 @Component({
   selector: 'app-dashboard-header',
   imports: [MatIcon, MatMenuModule, MatButtonModule, WidgetsPannel, CdkDropList, CdkDrag],
-  templateUrl: './dashboard-header.html',
-  styleUrl: './dashboard-header.scss',
+  templateUrl: './dashboard-header.html',  
 })
 export class DashboardHeader {
   dashboardService = inject(DashboardService);

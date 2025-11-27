@@ -1,0 +1,16 @@
+@use '@angular/material' as mat;
+
+.cdk-drop-list-dragging {
+    opacity: 0.5;
+    border-left: 5px solid #a507a0;
+    border-left: 5px solid var(--mat-sys-primary);
+    padding-left: 8px;
+  }
+  
+  // .m-0 {
+  //   margin: 0;
+  // }
+  
+  .mat-elevation-z3 {
+    @include mat.elevation(3);
+  }
