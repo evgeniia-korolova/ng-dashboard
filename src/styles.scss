@@ -279,3 +279,9 @@ mat-button-toggle-group.contrast {
     )
   );
 }
+
+.elevated-card {
+  @include mat.card-overrides((
+    elevated-container-color: var(--mat-sys-on-primary),    
+  ));
+}
