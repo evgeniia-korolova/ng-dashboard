@@ -18,7 +18,18 @@ import { menuItems } from '../../shared/menu-items.data';
 export class CustomSidenav {
   readonly collapsed = input.required<boolean>();
 
-  protected readonly menuItems = signal<MenuItemModel[]>(menuItems);
+  protected readonly rowMenuItems = signal<MenuItemModel[]>(menuItems);
+
+  protected readonly menuItems = computed(() =>
+    this.rowMenuItems().map((i) => ({
+      ...i,
+      subItems: i.subItems
+        ? i.subItems.filter((s) => !s.hidden)
+        : undefined,
+    }))
+  );
+  
+  
 
   protected readonly profilePicSize = computed(() => (this.collapsed() ? '32' : '100'));
 }

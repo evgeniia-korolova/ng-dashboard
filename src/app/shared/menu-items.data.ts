@@ -59,11 +59,11 @@ export const menuItems = [
       },
       { 
         id: 23, 
-        icon: 'post_add', 
-        label: 'Posts', 
-        route: 'posts', 
+        icon: 'dashboard', 
+        label: 'Grid', 
+        route: 'grid', 
         // component: Posts 
-        loadComponent: () => import('../pages/content/posts/posts'),
+        loadComponent: () => import('../pages/content/grid/grid'),
     },
     ],
   },

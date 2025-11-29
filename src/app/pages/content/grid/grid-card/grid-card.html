@@ -1,0 +1,28 @@
+@let card = cardContent();
+<mat-card class="p-6 mb-5" appearance="raised" class="elevated-card">
+    <mat-card-header class="mb-5">
+        <mat-card-title >{{card.title}}</mat-card-title>
+    </mat-card-header>
+    @if (variantSize() === 'small') {
+        <img mat-card-sm-image [src]="card.image" alt="card.title" class="h-[300px] w-full object-cover object-[50%_-30px]">
+    }
+    @else if (variantSize() === 'medium') {
+        <img mat-card-md-image [src]="card.image" alt="card.title" class="h-[300px] w-full object-cover object-[50%_-30px]">
+    }
+    @else if (variantSize() === 'large') {
+        <img mat-card-lg-image [src]="card.image" alt="card.title" class="h-[300px] w-full object-cover object-[50%_-30px]">
+    } @else {
+        <img mat-card-image [src]="card.image" alt="card.title" class="h-[300px] w-full object-cover object-[50%_-30px]">
+    }
+    <mat-card-content>
+        <p>{{card.description}} </p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button matIconButton class="secondary">
+            <mat-icon>favorite</mat-icon>
+        </button>
+        <button matIconButton class="accent">
+            <mat-icon>share</mat-icon>
+        </button>
+    </mat-card-actions>
+</mat-card>
