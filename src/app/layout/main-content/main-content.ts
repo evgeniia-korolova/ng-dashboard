@@ -9,19 +9,21 @@ import { RouterOutlet } from '@angular/router';
 
 import { CustomSidenav } from '../../features/custom-sidenav/custom-sidenav';
 import { ThemeService } from '../../core/services/theme-service';
+import { Header } from "../header/header";
 
 @Component({
   selector: 'app-main-content',
   imports: [
     RouterOutlet,
-    MatToolbar,
+    
     MatDrawerContainer,
     MatDrawer,
     MatDrawerContent,
-    MatIconButton,
-    MatIcon,
+    
+    
     CustomSidenav,
-  ],
+    Header
+],
   templateUrl: './main-content.html',
   styleUrl: './main-content.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

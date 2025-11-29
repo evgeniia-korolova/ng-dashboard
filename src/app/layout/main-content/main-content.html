@@ -1,14 +1,8 @@
-<mat-toolbar class="mat-elevation-z3">
-  <button matIconButton (click)="collapsed.set(!collapsed())" class="burger">
-    <mat-icon>menu</mat-icon>
-  </button>
-  Responsive sidebar
-  <button matIconButton class="theme-btn" (click)="toggleTheme()">
-    <mat-icon>
-      {{ currentTheme() === 'light' ? 'light_mode' : 'dark_mode' }}
-    </mat-icon>
-  </button>
-</mat-toolbar>
+<app-header
+  [currentTheme]="currentTheme()"
+  (toggleTheme)="toggleTheme()"
+  (toggleSidebar)="collapsed.set(!collapsed())"
+/>
 
 <mat-drawer-container>
   <mat-drawer [style.width]="sidenavWidth()" mode="side" opened>
