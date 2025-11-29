@@ -1,0 +1,29 @@
+<div class="my-buttons-panel p-6 flex flex-col gap-4 rounded-lg mat-elevation-z3">
+  <h3 class="text-lg">Button Toggle Groups</h3>
+  <div class="flex gap-2 flex-wrap">
+    <div class="flex flex-col m-auto text-center gap-3 ">
+      <mat-button-toggle-group name="favoriteColor" aria-label="Favorite Color" [hideSingleSelectionIndicator]="true" >
+        <mat-button-toggle value="red" >Red</mat-button-toggle>
+        <mat-button-toggle value="green">Green</mat-button-toggle>
+        <mat-button-toggle value="blue">Blue</mat-button-toggle>
+      </mat-button-toggle-group>
+      <p class="italic">Default</p>
+    </div>
+    <div class="flex flex-col m-auto text-center gap-3">
+      <mat-button-toggle-group name="favoriteColor" aria-label="Favorite Color" class="contrast" [(ngModel)]="favoriteColor">
+        <mat-button-toggle value="red" class="w-[92px]">Red</mat-button-toggle>
+        <mat-button-toggle value="green" class="w-[92px]">Green</mat-button-toggle>
+        <mat-button-toggle value="blue" class="w-[92px]">Blue</mat-button-toggle>
+      </mat-button-toggle-group>
+      <p class="italic">Contrast Fixed-Width</p>
+    </div>
+    <div class="flex flex-col m-auto text-center gap-3">
+      <mat-button-toggle-group  aria-label="Favorite Color" class="contrast small" [(ngModel)]="favoriteSmallColor">
+        <mat-button-toggle value="red">Red</mat-button-toggle>
+        <mat-button-toggle value="green">Green</mat-button-toggle>
+        <mat-button-toggle value="blue">Blue</mat-button-toggle>
+      </mat-button-toggle-group>
+      <p class="italic text-sm">Contrast Small</p>
+    </div>
+  </div>
+</div>

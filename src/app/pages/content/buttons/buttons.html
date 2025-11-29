@@ -1,0 +1,25 @@
+<h2 class="text-2xl mb-6">Buttons</h2>
+
+<div class="flex flex-row gap-4 mb-6 justify-between flex-wrap">
+  <mat-button-toggle-group [(ngModel)]="shape">
+    <mat-button-toggle value="square">Square</mat-button-toggle>
+    <mat-button-toggle value="">Rounded</mat-button-toggle>
+  </mat-button-toggle-group>
+
+  <mat-button-toggle-group [(ngModel)]="size">
+    <mat-button-toggle value="small">Small</mat-button-toggle>
+    <mat-button-toggle value="medium">Medium</mat-button-toggle>
+    <mat-button-toggle value="">Large</mat-button-toggle>
+  </mat-button-toggle-group>
+</div>
+
+<div class="grid grid-cols-2 gap-4 mb-6">
+  <app-filled-buttons [variantClasses]="variantClasses()" />
+  <app-elevated-buttons [variantClasses]="variantClasses()" />
+  <app-outlined-buttons [variantClasses]="variantClasses()" />
+  <app-tonal-buttons [variantClasses]="variantClasses()"/>
+  <app-text-buttons [variantClasses]="variantClasses()" />
+  <app-icon-buttons [variantClasses]="variantClasses()" />
+  <app-icon-button-buttons [variantClasses]="variantClasses()" />
+</div>
+<app-toggle-groups-buttons />

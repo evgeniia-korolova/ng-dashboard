@@ -33,7 +33,7 @@ export class MainContent {
   currentTheme = this.themeService.theme;
 
   sidenavWidth = computed(() => (this.collapsed() ? '72px' : '250px'));
-  contentWidth = computed(() => (this.collapsed() ? '82px' : '260px'));
+  contentWidth = computed(() => (this.collapsed() ? '82px' : '250px'));
 
   toggleTheme() {
     const next = this.currentTheme() === 'light' ? 'dark' : 'light';
