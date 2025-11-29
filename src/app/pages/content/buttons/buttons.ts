@@ -8,6 +8,7 @@ import { IconButtonButtons } from './icon-button-buttons/icon-button-buttons';
 import { ToggleGroupsButtons } from './toggle-groups-buttons/toggle-groups-buttons';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { FormsModule } from '@angular/forms';
+import { TonalButtons } from "./tonal-buttons/tonal-buttons";
 
 @Component({
   selector: 'app-buttons',
@@ -20,8 +21,9 @@ import { FormsModule } from '@angular/forms';
     IconButtonButtons,
     ToggleGroupsButtons,
     MatButtonToggleModule,
-    FormsModule
-  ],
+    FormsModule,
+    TonalButtons
+],
   templateUrl: './buttons.html',
   styleUrl: './buttons.scss',
 })

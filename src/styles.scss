@@ -81,6 +81,7 @@ body {
       text-state-layer-color: var(--mat-sys-primary-fixed-dim),
       outlined-outline-color: var(--mat-sys-inverse-primary),
       outlined-outline-width: 2px,
+      tonal-container-color: var(--mat-sys-primary-fixed-dim),
     )
   );
 
@@ -119,6 +120,7 @@ body {
       protected-state-layer-color: var(--mat-sys-tertiary-fixed-dim),
       outlined-state-layer-color: var(--mat-sys-tertiary-fixed-dim),
       outlined-outline-color: var(--mat-sys-tertiary-fixed-dim),
+      tonal-container-color: var(--mat-sys-secondary-container),
     )
   );
 
@@ -157,6 +159,8 @@ body {
       outlined-state-layer-color: var(--mat-sys-error),
       outlined-outline-color: var(--mat-sys-error),
       outlined-outline-width: 2px,
+      tonal-container-color: var(--mat-sys-error),
+      tonal-label-text-color: var(--mat-sys-on-error),
     )
   );
 
