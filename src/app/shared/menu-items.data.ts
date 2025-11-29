@@ -12,9 +12,17 @@ export const menuItems = [
     icon: 'video_library',
     label: 'Content',
     route: 'content',
-    loadComponent: () => import('../pages/content/content'),
-    // component: Content,
+    loadComponent: () => import('../pages/content/content'),    
     subItems: [
+      {
+        id: 20,
+        icon: 'info',
+        label: 'Overview',
+        route: '', // пустой путь
+        loadComponent: () => import('../pages/content/content-description/content-description'),
+        hidden: true,
+      },
+  
       {
         id: 21,
         icon: 'circle',
@@ -43,11 +51,11 @@ export const menuItems = [
       },
       {
         id: 22,
-        icon: 'playlist_play',
-        label: 'Playlists',
-        route: 'playlists',
+        icon: 'touch_app',
+        label: 'Buttons',
+        route: 'buttons',
         // component: Playlists,
-        loadComponent: () => import('../pages/content/playlists/playlists'),
+        loadComponent: () => import('../pages/content/buttons/buttons'),
       },
       { 
         id: 23, 

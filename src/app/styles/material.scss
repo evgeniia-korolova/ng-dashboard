@@ -23,5 +23,7 @@ html {
   @include mat.button-toggle-theme($custom-theme);
   @include mat.menu-theme($custom-theme);
   @include mat.divider-theme($custom-theme);
-  
+      
+  @include mat.elevation-classes();   
 }
+

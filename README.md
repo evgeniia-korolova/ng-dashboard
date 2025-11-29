@@ -41,8 +41,8 @@ This command runs the official Angular schematic and performs the setup automati
 
 ### Option 2 — Manual install **version 20.2**
 ```bash
-npm install tailwindcss @tailwindcss/postcss postcss autoprefixer
-npm install @tailwindcss/vite
+npm install tailwindcss @tailwindcss/postcss postcss autoprefixer --force
+
 
 
 This only installs the packages.
@@ -53,5 +53,5 @@ You must manually:
 • 	Update angular.json  if needed to ensure PostCSS is applied
 ⚠️ Use this if you prefer full control or want to customize the setup from scratch.
 
-(docs Tailwind)[https://tailwindcss.com/docs/installation/using-vite]
+(docs Tailwind)[https://tailwindcss.com/docs/installation/framework-guides/angular]
 (docs Angular)[https://v20.angular.dev/guide/tailwind]

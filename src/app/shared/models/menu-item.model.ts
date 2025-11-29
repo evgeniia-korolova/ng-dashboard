@@ -8,4 +8,6 @@ export type MenuItemModel = {
   subItems?: MenuItemModel[];
   //   component?: Type<unknown>;
   loadComponent?: () => Promise<any>;
+  hidden?: boolean;
+
 };

@@ -4,12 +4,21 @@
 // Learn more about theming and how to use it for your application's
 // custom components at https://material.angular.dev/guide/theming
 // @use '@angular/material' as mat;
-@use "./app/styles/tailwind.scss";
-@use "./app/styles/material.scss";
-@use '@angular/material' as mat;
-@use "./app/styles/colors.scss";
-@use "./app/styles/custom.scss";
 
+@use '@angular/material' as mat;
+
+@use './app/styles/material.scss';
+@use './app/styles/colors.scss';
+@use './app/styles/tailwind.scss';
+@use './app/styles/custom.scss';
+
+:root {
+  @include mat.sidenav-overrides(
+    (
+      content-background-color: var(--mat-sys-surface-container-low),
+    )
+  );
+}
 
 html,
 body {
@@ -21,7 +30,6 @@ body {
   font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
 
-
 .cdk-drop-list-dragging {
   opacity: 0.5;
   border-left: 5px solid #a507a0;
@@ -29,14 +37,241 @@ body {
   padding-left: 8px;
 }
 
-.m-0 {
-  margin: 0;
+[matIconButton].primary {
+  @include mat.icon-button-overrides(
+    (
+      icon-color: var(--mat-sys-tertiary-container),
+    )
+  );
 }
 
-.mat-elevation-z3 {
-  @include mat.elevation(3);
+[matButton].primary {
+  @include mat.icon-overrides(
+    (
+      color: var(--mat-sys-tertiary-container),
+    )
+  );
 }
 
+.primary {
+  @include mat.fab-overrides(
+    (
+      extended-container-shape: 30px,
+      container-color: var(--mat-sys-primary),
+      extended-label-text-size: 16px,
+      hover-state-layer-opacity: 0.3,
+      // убираем overlay при hover
+      focus-state-layer-opacity: 0,
+      // убираем overlay при focus
+      pressed-state-layer-opacity: 0,
+      extended-container-height: 40px,
+      foreground-color: var(--mat-sys-on-primary),
+    )
+  );
+}
 
+.accent {
+  @include mat.button-overrides(
+    (
+      filled-container-color: var(--mat-sys-primary-fixed-dim),
+      filled-label-text-color: var(--mat-sys-on-surface),
+      outlined-label-text-color: var(--mat-sys-inverse-primary),
+      protected-label-text-color: var(--mat-sys-primary-fixed-dim),
+      text-label-text-color: var(--mat-sys-primary-fixed-dim),
+      text-state-layer-color: var(--mat-sys-primary-fixed-dim),
+      outlined-outline-color: var(--mat-sys-inverse-primary),
+      outlined-outline-width: 2px,
+    )
+  );
 
+  @include mat.fab-overrides(
+    (
+      extended-container-shape: 30px,
+      container-color: var(--mat-sys-primary-container),
+      extended-label-text-size: 16px,
+      hover-state-layer-opacity: 0.3,
+      // убираем overlay при hover
+      focus-state-layer-opacity: 0,
+      // убираем overlay при focus
+      pressed-state-layer-opacity: 0,
+      extended-container-height: 40px,
+    )
+  );
+}
 
+[matIconButton].accent {
+  @include mat.icon-button-overrides(
+    (
+      icon-color: var(--mat-sys-primary-fixed-dim),
+    )
+  );
+}
+
+.secondary {
+  @include mat.button-overrides(
+    (
+      filled-container-color: var(--mat-sys-secondary-container),
+      filled-label-text-color: var(--mat-sys-on-secondary-container),
+      outlined-label-text-color: var(--mat-sys-tertiary-fixed-dim),
+      protected-label-text-color: var(--mat-sys-tertiary-fixed-dim),
+      text-label-text-color: var(--mat-sys-tertiary-fixed-dim),
+      text-state-layer-color: var(--mat-sys-tertiary-fixed-dim),
+      protected-state-layer-color: var(--mat-sys-tertiary-fixed-dim),
+      outlined-state-layer-color: var(--mat-sys-tertiary-fixed-dim),
+      outlined-outline-color: var(--mat-sys-tertiary-fixed-dim),
+    )
+  );
+
+  @include mat.fab-overrides(
+    (
+      extended-container-shape: 30px,
+      container-color: var(--mat-sys-tertiary-container),
+      extended-label-text-size: 16px,
+      hover-state-layer-opacity: 0.3,
+      focus-state-layer-opacity: 0,
+      pressed-state-layer-opacity: 0,
+      extended-container-height: 40px,
+      foreground-color: var(--mat-sys-on-secondary-container),
+    )
+  );
+}
+
+[matIconButton].secondary {
+  @include mat.icon-button-overrides(
+    (
+      icon-color: var(--mat-sys-secondary-container),
+    )
+  );
+}
+
+.error {
+  @include mat.button-overrides(
+    (
+      filled-container-color: var(--mat-sys-error),
+      filled-label-text-color: var(--mat-sys-on-error),
+      outlined-label-text-color: var(--mat-sys-error),
+      protected-label-text-color: var(--mat-sys-error),
+      text-label-text-color: var(--mat-sys-error),
+      text-state-layer-color: var(--mat-sys-error),
+      protected-state-layer-color: var(--mat-sys-error),
+      outlined-state-layer-color: var(--mat-sys-error),
+      outlined-outline-color: var(--mat-sys-error),
+      outlined-outline-width: 2px,
+    )
+  );
+
+  @include mat.fab-overrides(
+    (
+      extended-container-shape: 30px,
+      container-color: var(--mat-sys-inverse-on-surface),
+      extended-label-text-size: 16px,
+      hover-state-layer-opacity: 0.3,
+      focus-state-layer-opacity: 0,
+      pressed-state-layer-opacity: 0,
+      extended-container-height: 40px,
+      foreground-color: var(--mat-sys-error),
+      extended-container-elevation-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2),
+      extended-hover-container-elevation-shadow: 0px 2px 6px rgba(172, 20, 20, 0.2),
+    )
+  );
+}
+
+[matIconButton].secondary {
+  @include mat.icon-button-overrides(
+    (
+      icon-color: var(--mat-sys-error),
+    )
+  );
+}
+
+.square {
+  @include mat.button-overrides(
+    (
+      filled-container-shape: 8px,
+      outlined-container-shape: 8px,
+      protected-container-shape: 8px,
+      text-container-shape: 8px,
+      tonal-container-shape: 8px,
+    )
+  );
+
+  --mat-icon-button-container-shape: 8px;
+}
+
+.medium {
+  @include mat.theme(
+    (
+      density: -1,
+    )
+  );
+
+  @include mat.button-overrides(
+    (
+      filled-horizontal-padding: 20px,
+      outlined-horizontal-padding: 20px,
+      text-horizontal-padding: 20px,
+      protected-horizontal-padding: 20px,
+      filled-label-text-size: 12px,
+      outlined-label-text-size: 12px,
+      protected-label-text-size: 12px,
+      text-label-text-size: 12px,
+    )
+  );
+
+  @include mat.fab-overrides(
+    (
+      extended-label-text-size: 12px,
+    )
+  );
+
+  @include mat.button-toggle-overrides(
+    (
+      height: 36px,
+    )
+  );
+}
+
+.small {
+  @include mat.theme(
+    (
+      density: -2,
+    )
+  );
+
+  @include mat.button-overrides(
+    (
+      filled-horizontal-padding: 16px,
+      outlined-horizontal-padding: 16px,
+      text-horizontal-padding: 16px,
+      protected-horizontal-padding: 16px,
+      filled-label-text-size: 10px,
+      outlined-label-text-size: 10px,
+      protected-label-text-size: 10px,
+      text-label-text-size: 10px,
+    )
+  );
+
+  @include mat.fab-overrides(
+    (
+      extended-label-text-size: 10px,
+    )
+  );
+
+  @include mat.button-toggle-overrides(
+    (
+      height: 16px,
+      label-text-size: 12px,
+    )
+  );
+}
+
+mat-button-toggle-group.contrast {
+  @include mat.button-toggle-overrides(
+    (
+      selected-state-background-color: var(--mat-sys-surface-tint),
+      selected-state-text-color: var(--mat-sys-on-primary),
+      background-color: var(--mat-sys-surface-bright),
+      disabled-selected-state-background-color: red,
+    )
+  );
+}
