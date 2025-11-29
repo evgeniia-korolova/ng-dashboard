@@ -1,0 +1,1 @@
+import{Rb as s,db as o,yb as i,zb as c}from"./chunk-4SNYFYRH.js";var e=class n{static \u0275fac=function(t){return new(t||n)};static \u0275cmp=o({type:n,selectors:[["app-content-description"]],decls:2,vars:0,template:function(t,r){t&1&&(i(0,"p"),s(1,"content-description works!"),c())},encapsulation:2})};export{e as default};
