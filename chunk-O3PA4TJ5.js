@@ -1,1 +1,0 @@
-import{Qb as a,cb as o,xb as n,yb as p}from"./chunk-WYOYSGJN.js";var e=class s{static \u0275fac=function(t){return new(t||s)};static \u0275cmp=o({type:s,selectors:[["app-posts"]],decls:2,vars:0,template:function(t,c){t&1&&(n(0,"p"),a(1,"posts works!"),p())},encapsulation:2})};export{e as default};
