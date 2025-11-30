@@ -1,7 +1,7 @@
 <div class="text-center pt-6">
   <img
     class="avatar inline-block my-4 rounded-full 
-    [box-shadow:0px_5px_5px_-3px_rgba(0,0,0,0.2),0px_8px_10px_1px_rgba(0,0,0,0.14),0px_3px_14px_2px_rgba(0,0,0,0.12)] "
+    [box-shadow:0px_5px_5px_-3px_rgba(0,0,0,0.2),0px_8px_10px_1px_rgba(0,0,0,0.14),0px_3px_14px_2px_rgba(0,0,0,0.12)]"
     src="https://randomuser.me/api/portraits/women/45.jpg"
     [width]="profilePicSize()"
     [height]="profilePicSize()"
@@ -13,7 +13,6 @@
 </div>
 <mat-nav-list>
   @for (item of menuItems(); track $index) {
-    <app-menu-item [item]="item" [collapsed]="collapsed()" />
-  
+    <app-menu-item [item]="item" [collapsed]="collapsed()" />  
   }
 </mat-nav-list>

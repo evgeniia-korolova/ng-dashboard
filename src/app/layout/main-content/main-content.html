@@ -1,16 +1,21 @@
 <app-header
   [currentTheme]="currentTheme()"
   (toggleTheme)="toggleTheme()"
-  (toggleSidebar)="collapsed.set(!collapsed())"
+  (toggleSidebar)="toggleSidebar()"
 />
 
 <mat-drawer-container>
-  <mat-drawer [style.width]="sidenavWidth()" mode="side" opened>
-    <app-custom-sidenav [collapsed]="collapsed()" />
+  <mat-drawer [style.width]="sidenavWidth()" mode="side" [opened]="isOpened()"
+  (openedChange)="sidenavOpened.set($event)">
+    <app-custom-sidenav [collapsed]="isCollapsed()" />
   </mat-drawer>
   <mat-drawer-content [style.margin-left]="contentWidth()">
     <div class="content">
       <router-outlet />
     </div>
   </mat-drawer-content>
-</mat-drawer-container>
+</mat-drawer-container> -->
+
+
+
+

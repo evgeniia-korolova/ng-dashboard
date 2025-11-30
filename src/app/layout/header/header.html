@@ -1,8 +1,8 @@
 <mat-toolbar class="mat-elevation-z3 relative z-5">
-    <button matIconButton (click)="toggleSidebar.emit()" class="burger">
+    <button matIconButton (click)="toggleSidebar.emit()">
       <mat-icon>menu</mat-icon>
     </button>    
-    <button matIconButton class="theme-btn" (click)="toggleTheme.emit()" class="ml-auto">
+    <button matIconButton  (click)="toggleTheme.emit()" class="ml-auto">
       <mat-icon>
         {{ currentTheme() === 'light' ? 'light_mode' : 'dark_mode' }}
       </mat-icon>
