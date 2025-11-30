@@ -1,0 +1,1 @@
+import{Rb as a,db as o,yb as n,zb as r}from"./chunk-UYC2NN36.js";var e=class s{static \u0275fac=function(t){return new(t||s)};static \u0275cmp=o({type:s,selectors:[["app-shorts"]],decls:2,vars:0,template:function(t,p){t&1&&(n(0,"p"),a(1,"shorts works!"),r())},encapsulation:2})};export{e as default};
