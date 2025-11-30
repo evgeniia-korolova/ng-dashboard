@@ -19,22 +19,23 @@ export class MainContent {
   collapsed = signal(false);
 
   currentTheme = this.themeService.theme;
+
   
   sidenavOpened = signal(false);
 
   smallScreen = computed(() => this.responsiveService.smallWidth());
 
   sidenavWidth = computed(() =>
-    this.responsiveService.smallWidth() ? '250px' : this.isCollapsed() ? '72px' : '250px'
+    this.smallScreen() ? '250px' : this.isCollapsed() ? '72px' : '250px'
   );
 
   contentWidth = computed(() =>
-    this.responsiveService.smallWidth() ? '0px' : this.isCollapsed() ? '82px' : '250px'
+    this.smallScreen() ? '0px' : this.isCollapsed() ? '82px' : '250px'
   );
 
-  isCollapsed = computed(() => (this.responsiveService.smallWidth() ? false : this.collapsed()));
+  isCollapsed = computed(() => (this.smallScreen() ? false : this.collapsed()));
 
-  isOpened = computed(() => (this.responsiveService.smallWidth() ? this.sidenavOpened() : true));
+  isOpened = computed(() => (this.smallScreen() ? this.sidenavOpened() : true));
 
   toggleTheme() {
     const next = this.currentTheme() === 'light' ? 'dark' : 'light';
