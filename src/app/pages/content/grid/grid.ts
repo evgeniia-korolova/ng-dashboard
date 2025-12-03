@@ -24,7 +24,7 @@ export default class Grid {
         id: uuidv4(),
         title: `Card ${i + 1}`,
         description: `Description for card ${i + 1}`,
-        image: `/cat-img.webp`
+        image: `cat-img.webp`
       })
     }
     this.cards.set(newCards)

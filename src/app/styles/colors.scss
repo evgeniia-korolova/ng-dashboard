@@ -45,9 +45,9 @@ html {
     --mat-sys-surface-dim: rgb(228 214 219);
     --mat-sys-surface-bright: rgb(255 248 249);
     --mat-sys-surface-container-lowest: rgb(255 255 255);
-    --mat-sys-surface-container-low: rgb(254 240 245);
+    --mat-sys-surface-container-low: rgb(254, 246, 249);
     --mat-sys-surface-container: rgb(249 234 239);
-    --mat-sys-surface-container-high: rgb(243 229 234);
+    --mat-sys-surface-container-high: rgb(253, 249, 250);
     --mat-sys-surface-container-highest: rgb(237 223 228);
     // --mat-toolbar-container-background-color: rgb(251 217 234);
     // mat-icons hover
@@ -102,7 +102,7 @@ html {
     --mat-sys-surface-dim: rgb(24 17 21);
     --mat-sys-surface-bright: rgb(63 55 59);
     --mat-sys-surface-container-lowest: rgb(19 12 16);
-    --mat-sys-surface-container-low: rgb(87, 74, 80);
+    --mat-sys-surface-container-low: rgb(63, 50, 56);
     --mat-sys-surface-container: rgb(37 30 33);
     --mat-sys-surface-container-high: rgb(48 40 44);
     --mat-sys-surface-container-highest: rgb(59 50 54);
@@ -111,5 +111,6 @@ html {
     --mat-icon-button-focus-state-layer-opacity: 0.12;
     --mat-icon-button-pressed-state-layer-opacity: 0.16;
     // --mat-sidenav-content-background-color: rgb(96, 94, 94);
+    --mat-form-field-error-text-color: rgb(241, 84, 6);
   }
   

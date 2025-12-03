@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LongForm } from './long-form';
+import { TemplateDrivenForm } from './template-driven-form';
 
-describe('LongForm', () => {
-  let component: LongForm;
-  let fixture: ComponentFixture<LongForm>;
+describe('TemplateDrivenForm', () => {
+  let component: TemplateDrivenForm;
+  let fixture: ComponentFixture<TemplateDrivenForm>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [LongForm]
+      imports: [TemplateDrivenForm]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(LongForm);
+    fixture = TestBed.createComponent(TemplateDrivenForm);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

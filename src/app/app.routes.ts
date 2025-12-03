@@ -6,10 +6,18 @@ const itemToRoute = (i: MenuItemModel): Route => {
     const route: Route = {path: i.route, loadComponent: i.loadComponent};
     if(i.subItems) {
         route.children = i.subItems.map((s) => itemToRoute(s))
+        if (i.redirectToFirstChild && i.subItems.length > 0) {
+            route.children.unshift({
+              path: '',
+              pathMatch: 'full',
+              redirectTo: i.subItems[0].route,
+            });
+          }
     }
     return route
 }
 
+  
 export const routes: Routes = [
     {
         path: '',
@@ -34,20 +42,28 @@ export const routes: Routes = [
     //     loadComponent: () => import('./pages/content/content'),
     //     children: [
     //         {
-    //             path: 'videos',
-    //             loadComponent: () => import('./pages/content/videos/videos'),
-                
-    //             children: [
-    //                 {
-    //                     path: 'shorts',
-    //                     loadComponent: () => import('./pages/content/videos/shorts/shorts')
-    //                 },
-    //                 {
-    //                     path: 'long-form',
-    //                     loadComponent: () => import('./pages/content/videos/long-form/long-form')
-    //                 },
-    //             ]
-    //         },
+    //     path: 'forms', 
+    //     loadComponent: () => import('./pages/content/videos/videos'),
+    //     children: [
+    //       {
+    //         path: '',
+    //         pathMatch: 'full',
+    //         redirectTo: 'inputs' // редирект на первый дочерний
+    //       },
+    //       {
+    //         path: 'inputs', 
+    //         loadComponent: () => import('./pages/content/videos/shorts/shorts')
+    //       },
+    //       {
+    //         path: 'template-form', 
+    //         loadComponent: () => import('./pages/content/videos/long-form/long-form')
+    //       },
+    //       {
+    //         path: 'reactive-form',
+    //         loadComponent: () => import('./pages/content/videos/reactive-form/reactive-form')
+    //       }
+    //     ]
+    //   },
     //         {
     //             path: 'playlists',
     //             loadComponent: () => import('./pages/content/playlists/playlists'),

@@ -1,0 +1,160 @@
+<div class="grid lg:grid-cols-2 grid-cols-1 gap-4 mb-6">
+  <div class="p-6 flex flex-col gap-4 rounded-lg mat-elevation-z3 mb-3 field">
+    <h2>Basic date range picker</h2>
+    <mat-form-field>
+      <mat-label>Enter a date range</mat-label>
+      <mat-date-range-input [rangePicker]="picker">
+        <input matStartDate placeholder="Start date" />
+        <input matEndDate placeholder="End date" />
+      </mat-date-range-input>
+      <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-date-range-picker #picker></mat-date-range-picker>
+    </mat-form-field>
+  </div>
+
+  <div class="p-6 flex flex-col gap-4 rounded-lg mat-elevation-z3 mb-3 field">
+    <h2>Datepicker action buttons</h2>
+    <mat-form-field>
+      <mat-label>Choose a date</mat-label>
+      <input matInput [matDatepicker]="datepicker" />
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
+      <mat-datepicker #datepicker>
+        <mat-datepicker-actions>
+          <button matButton matDatepickerCancel>Cancel</button>
+          <button matButton="elevated" matDatepickerApply>Apply</button>
+        </mat-datepicker-actions>
+      </mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Enter a date range</mat-label>
+      <mat-date-range-input [rangePicker]="rangePicker">
+        <input matStartDate placeholder="Start date" />
+        <input matEndDate placeholder="End date" />
+      </mat-date-range-input>
+      <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="rangePicker"></mat-datepicker-toggle>
+      <mat-date-range-picker #rangePicker>
+        <mat-date-range-picker-actions>
+          <button matButton matDateRangePickerCancel>Cancel</button>
+          <button matButton="elevated" matDateRangePickerApply>Apply</button>
+        </mat-date-range-picker-actions>
+      </mat-date-range-picker>
+    </mat-form-field>
+  </div>
+
+  <div class="p-6 flex flex-col gap-4 rounded-lg mat-elevation-z3 mb-3 field">
+    <h2>Input with error messages</h2>
+    <form class="w-full">
+      <mat-form-field class="w-full" >
+        <mat-label>Email</mat-label>
+        <input          
+          matInput
+          [formControl]="emailFormControl"
+          placeholder="Ex. pat@example.com"
+          [type]="hide() ? 'password' : 'text'"
+        />
+        <button
+          matIconButton
+          matSuffix
+          (click)="clickEvent($event)"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide()"
+        >
+          <mat-icon>{{ hide() ? 'visibility_off' : 'visibility' }}</mat-icon>
+        </button>
+        @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
+        <mat-error class="error-message">Please enter a valid email address</mat-error>
+        } @if (emailFormControl.hasError('required')) {
+        <mat-error>Email is <strong>required</strong></mat-error>
+        }
+      </mat-form-field>
+    </form>
+  </div>
+
+  <div class="p-6 flex flex-col gap-4 rounded-lg mat-elevation-z3 mb-3 field">
+    <h2>Outline form</h2>
+    <mat-form-field appearance="outline" class="outlined-field">
+      <mat-label>Outline form field</mat-label>
+      <input matInput placeholder="Placeholder" class="w-full">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+  </div>
+
+  <div class="p-6 flex flex-col gap-4 rounded-lg mat-elevation-z3 mb-3 field" >
+    <h2>Textarea</h2>
+    <mat-form-field class="w-full">
+      <mat-label>Leave your comment here</mat-label>
+      <textarea matInput></textarea>
+    </mat-form-field>
+  </div>
+
+  <div class="p-6 flex flex-col gap-4 rounded-lg mat-elevation-z3 mb-3 field">
+    <h2>Mat select</h2>
+    <mat-form-field>
+      <mat-label>Favorite animal</mat-label>
+      <mat-select [formControl]="animalControl" required>
+        <mat-option>--</mat-option>
+        @for (animal of animals; track animal) {
+        <mat-option [value]="animal">{{ animal.name }}</mat-option>
+        }
+      </mat-select>
+      @if (animalControl.hasError('required')) {
+      <mat-error>Please choose an animal</mat-error>
+      }
+      <mat-hint>{{ animalControl.value?.sound }}</mat-hint>
+    </mat-form-field>
+  </div>
+
+  <div class="p-6 flex flex-col gap-4 rounded-lg mat-elevation-z3 mb-3 field">
+    <h2>Mat Selection List</h2>
+    <mat-selection-list #options>
+      @for (option of optionsArray; track option) {
+      <mat-list-option>{{ option }}</mat-list-option>
+      }
+    </mat-selection-list>
+
+    <p>Options selected: {{ options.selectedOptions.selected.length }}</p>
+  </div>
+
+  <div class="p-6 flex flex-col gap-4 rounded-lg mat-elevation-z3 mb-3 field">
+    <h2>Mat Selection List</h2>
+    <form [formGroup]="form">
+      <mat-selection-list #shoesList [formControl]="shoesControl" name="shoes" [multiple]="false">
+        @for (shoe of shoes; track shoe) {
+        <mat-list-option [value]="shoe.value">{{ shoe.name }}</mat-list-option>
+        }
+      </mat-selection-list>
+      <p>Option selected: {{ shoesControl.value ? shoesControl.value[0] : 'None' }}</p>
+    </form>
+  </div>
+
+  <div class="p-6 flex flex-col gap-4 rounded-lg mat-elevation-z3 mb-3 field">
+    <div class="flex gap-10">
+      <mat-checkbox [(ngModel)]="checked" class="square-checkbox">Checked</mat-checkbox>
+      <mat-checkbox [(ngModel)]="indeterminate" class="square-checkbox">Indeterminate</mat-checkbox>
+    </div>
+
+    <div class="flex gap-6 items-center">
+      <mat-radio-group [(ngModel)]="labelPosition" class="flex gap-10">
+        <mat-radio-button value="after">After</mat-radio-button>
+        <mat-radio-button value="before">Before</mat-radio-button>
+      </mat-radio-group>
+    </div>
+
+    <div>
+      <mat-checkbox
+        class="square-checkbox"
+        [(ngModel)]="checked"
+        [(indeterminate)]="indeterminate"
+        [labelPosition]="labelPosition()"
+        [disabled]="disabled()"
+      >
+        I'm a checkbox
+      </mat-checkbox>
+    </div>
+  </div>
+</div>

@@ -9,4 +9,5 @@ export type MenuItemModel = {
   //   component?: Type<unknown>;
   loadComponent?: () => Promise<any>;
   hidden?: boolean;
+  redirectToFirstChild?: boolean;
 };
