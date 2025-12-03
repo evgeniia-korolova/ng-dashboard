@@ -1,1 +1,0 @@
-import{Rb as a,db as n,yb as m,zb as r}from"./chunk-UYC2NN36.js";var o=class t{static \u0275fac=function(e){return new(e||t)};static \u0275cmp=n({type:t,selectors:[["app-long-form"]],decls:2,vars:0,template:function(e,i){e&1&&(m(0,"p"),a(1,"long-form works!"),r())},encapsulation:2})};export{o as default};

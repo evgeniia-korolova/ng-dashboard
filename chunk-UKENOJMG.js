@@ -1,0 +1,1 @@
+import{Jb as r,Kb as i,cc as n,mb as a}from"./chunk-BCD44I3P.js";var t=class o{static \u0275fac=function(e){return new(e||o)};static \u0275cmp=a({type:o,selectors:[["app-reactive-form"]],decls:2,vars:0,template:function(e,c){e&1&&(r(0,"p"),n(1,"reactive-form works!"),i())},encapsulation:2})};export{t as default};

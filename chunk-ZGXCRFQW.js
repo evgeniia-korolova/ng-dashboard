@@ -1,0 +1,1 @@
+import{Jb as o,Kb as r,cc as a,mb as m}from"./chunk-BCD44I3P.js";var t=class n{static \u0275fac=function(e){return new(e||n)};static \u0275cmp=m({type:n,selectors:[["app-template-driven-form"]],decls:2,vars:0,template:function(e,p){e&1&&(o(0,"p"),a(1,"template-driven-form works!"),r())},encapsulation:2})};export{t as default};
