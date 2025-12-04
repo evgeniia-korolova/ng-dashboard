@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, computed, input, signal } from '@angular/core';
+import { Component, ChangeDetectionStrategy, computed, input, signal, output } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 
@@ -27,9 +27,17 @@ export class CustomSidenav {
         ? i.subItems.filter((s) => !s.hidden)
         : undefined,
     }))
-  );
-  
-  
+  );  
 
   protected readonly profilePicSize = computed(() => (this.collapsed() ? '32' : '100'));
+
+  closeRequest = output<void>();
+
+  onMenuAction(hasSubMenu: boolean) {
+    if (!hasSubMenu) {
+      this.closeRequest.emit();
+    }
+  }
+
+
 }

@@ -1,1 +1,26 @@
-<p>template-driven-form works!</p>
+<div class="p-6 flex flex-col gap-4 rounded-lg mat-elevation-z3 mb-3 field">
+    <h2>Template-driven Form</h2>
+<form (ngSubmit)="save()" class="flex flex-col items-center max-width-[350px]">
+  <div class="w-full">
+    <mat-form-field appearance="fill" class="w-full">
+      <mat-label>Name</mat-label>
+      <input matInput [(ngModel)]="name" name="name" class="w-full"/>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="w-full">
+      <mat-label>Email</mat-label>
+      <input matInput [(ngModel)]="email" name="email"/>
+    </mat-form-field>
+    <mat-form-field class="w-full">
+      <mat-label>Phone</mat-label>
+      <input matInput [(ngModel)]="phone" name="phone"/>
+    </mat-form-field>
+  </div>
+  <div class="flex gap-6">
+    <button matButton="tonal" type="submit">Save</button>
+    <button matButton="outlined" routerLink="/" type="button">Cancel</button>
+  </div>
+</form>
+@if (saving()) {
+    <mat-progress-spinner mode="indeterminate"/>
+}
+</div>

@@ -53,4 +53,12 @@ export class MainContent {
       this.collapsed.set(!this.collapsed());
     }
   }
+
+  handleClose() {
+    if (this.smallScreen()) {
+      this.sidenavOpened.set(false);
+    }
+  }
+  
+  
 }
