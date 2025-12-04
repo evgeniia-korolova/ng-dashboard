@@ -1,18 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import Stepper from './stepper';
 
-import { TemplateDrivenForm } from './template-driven-form';
 
-describe('TemplateDrivenForm', () => {
-  let component: TemplateDrivenForm;
-  let fixture: ComponentFixture<TemplateDrivenForm>;
+
+describe('Stepper', () => {
+  let component: Stepper;
+  let fixture: ComponentFixture<Stepper>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TemplateDrivenForm]
+      imports: [Stepper]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(TemplateDrivenForm);
+    fixture = TestBed.createComponent(Stepper);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

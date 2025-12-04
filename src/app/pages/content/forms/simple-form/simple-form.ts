@@ -6,12 +6,12 @@ import { MatInputModule } from '@angular/material/input';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
-  selector: 'app-template-driven-form',
+  selector: 'app-simple-form',
   imports: [MatFormFieldModule, MatInputModule, MatButtonModule, FormsModule, MatProgressSpinnerModule],
-  templateUrl: './template-driven-form.html',
-  styleUrl: './template-driven-form.scss',
+  templateUrl: './simple-form.html',
+  styleUrl: './simple-form.scss',
 })
-export default class TemplateDrivenForm {
+export default class SimpleForm {
   name = signal('')
   email = signal('')
   phone = signal('')
