@@ -1,0 +1,1 @@
+import{Lb as i,Mb as c,ec as s,mb as o}from"./chunk-5BGA6NZ5.js";var e=class n{static \u0275fac=function(t){return new(t||n)};static \u0275cmp=o({type:n,selectors:[["app-content-description"]],decls:2,vars:0,template:function(t,r){t&1&&(i(0,"p"),s(1,"content-description works!"),c())},encapsulation:2})};export{e as default};
