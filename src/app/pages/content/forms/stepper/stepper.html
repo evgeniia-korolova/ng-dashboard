@@ -1,1 +1,126 @@
-<p>reactive-form works!</p>
+<div class="p-6 flex flex-col gap-4 rounded-lg mat-elevation-z3 mb-3 field">
+  <h2 class="font-semibold">Responsive MultiForm Stepper</h2>
+<mat-stepper  [orientation]="(stepperOrientation | async)!" [linear]="isLinear()">
+  <mat-step [stepControl]="firstFormGroup"  label="Fill out your name">
+    <form [formGroup]="firstFormGroup">
+      <mat-form-field class="w-full">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required />
+      </mat-form-field>
+      <div>
+        <button matButton matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
+    <form [formGroup]="secondFormGroup">
+      <mat-form-field class="w-full">
+        <mat-label>Address</mat-label>
+        <input
+          matInput
+          formControlName="secondCtrl"
+          placeholder="Ex. 1 Main St, New York, NY"
+          required
+        />
+      </mat-form-field>
+      <div>
+        <button matButton matStepperPrevious>Back</button>
+        <button matButton matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="thirdFormGroup" label="Fill out your phone number">
+    <form [formGroup]="thirdFormGroup">
+      <mat-form-field class="w-full">
+        <mat-label>Phone number</mat-label>
+        <input matInput formControlName="thirdCtrl" placeholder="Ex. 12345678" required />
+      </mat-form-field>
+      <div>
+        <button matButton matStepperPrevious>Back</button>
+        <button matButton matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    <p>You are now done.</p>
+    <div>
+      <button matButton matStepperPrevious>Back</button>
+    </div>
+  </mat-step>
+</mat-stepper>
+</div>
+
+
+
+<div class="p-6 flex flex-col gap-4 rounded-lg mat-elevation-z3 mb-3 field">
+  <h2 class="font-semibold">Responsive SingleForm Stepper with SnackBar</h2>
+<form [formGroup]="mainForm" (ngSubmit)="onSubmit()" >
+  <mat-stepper [linear]="true" [orientation]="(stepperOrientation | async)!">
+    <mat-step [stepControl]="Basicform" label="Basic info" >
+      <div formGroupName="basic">
+      <mat-form-field class="w-full">
+        <mat-label>First Name</mat-label>
+        <input matInput formControlName="firstname" required />
+      </mat-form-field>
+      <mat-form-field class="w-full">
+        <mat-label>Last Name</mat-label>
+        <input matInput formControlName="lastname" required />
+      </mat-form-field>
+      <div>
+        <button matButton matStepperNext type="button">Next</button>
+      </div>
+    </div>
+    </mat-step>
+
+    <mat-step [stepControl]="contactform" label="Fill out your address">
+      <div formGroupName="contact">
+      <mat-form-field class="w-full">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" placeholder="Email" required />
+      </mat-form-field>
+      <mat-form-field class="w-full">
+        <mat-label>Phone Number</mat-label>
+        <input matInput formControlName="phone" placeholder="Phone" required />
+      </mat-form-field>
+      <div>
+        <button matButton matStepperPrevious >Back</button>
+        <button matButton matStepperNext type="button">Next</button>
+      </div>
+    </div>
+    </mat-step>
+
+    <mat-step [stepControl]="addressform" label="Fill out your phone number">
+      <div formGroupName="address">
+      <mat-form-field class="w-full">
+        <mat-label>Street</mat-label>
+        <input matInput formControlName="street" placeholder="street" required />
+      </mat-form-field>
+      <mat-form-field class="w-full">
+        <mat-label>City</mat-label>
+        <input matInput formControlName="city" placeholder="City" required />
+      </mat-form-field>
+      <mat-form-field class="w-full">
+        <mat-label>Zip</mat-label>
+        <input matInput formControlName="zip" placeholder="Zip" required />
+      </mat-form-field>
+      <div>
+        <button matButton matStepperPrevious>Back</button>
+        <button matButton matStepperNext type="button">Next</button>
+      </div>
+    </div>
+    </mat-step>
+
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      <p>You are now done.</p>
+      <div>
+        <button matButton matStepperPrevious>Back</button>
+        <button matButton type="submit">Submit</button>
+      </div>
+    </mat-step>
+  </mat-stepper>
+</form>
+</div>
+
+
