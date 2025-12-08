@@ -1,0 +1,12 @@
+<div class="p-4 rounded-lg shadow-sm border border-gray-200 hover:border-black cursor-pointer pt-1">
+    <div class="flex items-center justify-between mb-1">
+        <span class="text-sm">{{field().type | titlecase}} </span>
+        <button matIconButton class="-m-2" (click)="deleteField($event)">
+            <mat-icon >delete</mat-icon>
+        </button>
+    </div>
+  <ng-container
+    [ngComponentOutlet]="previewComponent()"
+    [ngComponentOutletInputs]="{ field: field() }"
+  ></ng-container>
+</div>

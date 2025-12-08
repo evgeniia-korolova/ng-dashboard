@@ -52,6 +52,13 @@ export const menuItems = [
             route: 'stepper',            
             loadComponent: () => import('../pages/content/forms/stepper/stepper'),
           },
+          {
+            id: 213,
+            icon: 'widgets',
+            label: 'Form Designer',
+            route: 'form-designer',            
+            loadComponent: () => import('../pages/content/forms/form-designer/form-designer'),
+          },
         ],
       },
       {
