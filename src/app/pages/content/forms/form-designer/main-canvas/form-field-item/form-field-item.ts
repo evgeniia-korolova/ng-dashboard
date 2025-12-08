@@ -1,27 +1,23 @@
 import { Component, computed, inject, input } from '@angular/core';
 import { FormField } from '../../models/field.interface';
 import { FieldTypesService } from '../../services/field-types-service';
-import { NgComponentOutlet, TitleCasePipe } from '@angular/common';
+import { TitleCasePipe } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { FormService } from '../../services/form-service';
 
+import { FieldPreview } from "../field-preview/field-preview";
+
 @Component({
   selector: 'app-form-field-item',
-  imports: [NgComponentOutlet, TitleCasePipe, MatButtonModule, MatIconModule],
+  imports: [TitleCasePipe, MatButtonModule, MatIconModule, FieldPreview],
   templateUrl: './form-field-item.html',
   styleUrl: './form-field-item.scss',
 })
 export class FormFieldItem {
   field = input.required<FormField>();
-
-  fieldTypeService = inject(FieldTypesService);
-  formService = inject(FormService)
-
-  previewComponent = computed(() => {
-    const type = this.fieldTypeService.getFieldType(this.field().type);
-    return type?.component ?? null
-  })
+ 
+  formService = inject(FormService) 
 
   deleteField(e: Event) {
      e.stopPropagation();

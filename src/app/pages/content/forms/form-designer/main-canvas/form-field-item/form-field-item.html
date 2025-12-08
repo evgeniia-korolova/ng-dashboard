@@ -5,8 +5,9 @@
             <mat-icon >delete</mat-icon>
         </button>
     </div>
-  <ng-container
+    <app-field-preview [field]="field()" />
+  <!-- <ng-container
     [ngComponentOutlet]="previewComponent()"
     [ngComponentOutletInputs]="{ field: field() }"
-  ></ng-container>
+  ></ng-container> -->
 </div>
