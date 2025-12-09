@@ -5,6 +5,14 @@
       <mat-button-toggle value="editor">Editor</mat-button-toggle>
       <mat-button-toggle value="preview">Preview</mat-button-toggle>
     </mat-button-toggle-group>
+    @if (activeTab() === 'editor') {
+      <div class="ml-auto ">
+        <button matButton="tonal" (click)="formService.addRow()">
+          Add rows
+          <mat-icon>add_circle</mat-icon>
+        </button>
+      </div>
+    }
   </div>
   @if (activeTab() === 'editor') {
   <app-form-editor />

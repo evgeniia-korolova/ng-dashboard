@@ -1,29 +1,101 @@
 import { CheckboxField } from '../field-types/checkbox-field/checkbox-field';
+import { SelectField } from '../field-types/select-field/select-field';
 import { TextField } from '../field-types/text-field/text-field';
 import { FieldTypeDefinition } from './../models/field.interface';
 import { Injectable } from '@angular/core';
 
-const TEXT_FIELD_DEFINITION = {
+const TEXT_FIELD_DEFINITION: FieldTypeDefinition = {
   type: 'text',
   label: 'Text Field',
   icon: 'text_fields',
   defaultConfig: {
     label: 'Text Field',
-    required: false
+    required: false,
   },
-  component: TextField
-}
-const CHECKBOX_FIELD_DEFINITION = {
+  settingsConfig: [
+    {
+      type: 'text',
+      key: 'label',
+      label: 'label',
+    },
+    {
+      type: 'text',
+      key: 'placeholder',
+      label: 'Placeholder',
+    },
+    {
+      type: 'checkbox',
+      key: 'required',
+      label: 'Required',
+    },
+    {
+      type: 'select',
+      key: 'inputType',
+      label: 'Input Type',
+      options: [
+        { value: 'text', label: 'Text' },
+        { value: 'number', label: 'Number' },
+        { value: 'email', label: 'Email' },
+        { value: 'tel', label: 'Phone' },
+      ],
+    },
+  ],
+  component: TextField,
+};
+const CHECKBOX_FIELD_DEFINITION: FieldTypeDefinition = {
   type: 'checkbox',
   label: 'Checkbox',
   icon: 'check_box',
   defaultConfig: {
     label: 'Checkbox',
-    required: false
+    required: false,
   },
-  component: CheckboxField
-}
-
+  settingsConfig: [
+    {
+      type: 'text',
+      key: 'label',
+      label: 'label',
+    },
+    {
+      type: 'checkbox',
+      key: 'required',
+      label: 'Required',
+    },
+  ],
+  component: CheckboxField,
+};
+const SELECT_FIELD_DEFINITION: FieldTypeDefinition = {
+  type: 'select',
+  label: 'Dropdown',
+  icon: 'arrow_drop_down_circle',
+  defaultConfig: {
+    label: 'Select',
+    required: false,
+    options: [
+      { value: 'option1', label: 'Option 1' },
+      { value: 'option2', label: 'Option 2' },
+      { value: 'option3', label: 'Option 3' },
+    ],
+  },
+  settingsConfig: [
+    {
+      type: 'text',
+      key: 'label',
+      label: 'label',
+    },
+    {
+      type: 'checkbox',
+      key: 'required',
+      label: 'Required',
+    },
+    {
+      type: 'dynamic-options',
+      key: 'options',
+      label: 'Dropdown Options',
+    },
+  ],
+  component: SelectField,
+};
 
 @Injectable({
   providedIn: 'root',
@@ -31,14 +103,15 @@ const CHECKBOX_FIELD_DEFINITION = {
 export class FieldTypesService {
   fieldTypes = new Map<string, FieldTypeDefinition>([
     ['text', TEXT_FIELD_DEFINITION],
-    ['checkbox', CHECKBOX_FIELD_DEFINITION]
-  ])
+    ['checkbox', CHECKBOX_FIELD_DEFINITION],
+    ['select', SELECT_FIELD_DEFINITION]
+  ]);
 
   getFieldType(type: string): FieldTypeDefinition | undefined {
-    return this.fieldTypes.get(type)
+    return this.fieldTypes.get(type);
   }
 
-  getAllFieldTypes():FieldTypeDefinition[] {
-    return Array.from(this.fieldTypes.values())
+  getAllFieldTypes(): FieldTypeDefinition[] {
+    return Array.from(this.fieldTypes.values());
   }
 }
