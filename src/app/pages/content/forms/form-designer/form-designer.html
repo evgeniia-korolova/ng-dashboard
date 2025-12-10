@@ -3,9 +3,13 @@
         <h1 class="text-2xl tracking-wide font-medium">Form Designer</h1>
         <p class="text-gray-500 text-center">Create beutiful tesponsive forms with Angular Material and Tailwind</p>
     </div>
-    <div class="flex gap-4" cdkDropListGroup>
+    <div class="flex gap-4 relative" cdkDropListGroup>
         <app-form-elements-menu class="w-48"/>
         <app-main-canvas class="flex-1"/>
         <app-field-settings class="w-48"/>
+        <button matButton="tonal" class="!absolute -top-[50px] right-0" (click)="exportFormService.exportForm()">
+            Export Form
+            <mat-icon>download</mat-icon>
+        </button>
     </div>
 </div>
