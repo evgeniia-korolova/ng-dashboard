@@ -1,3 +1,14 @@
+@use '@angular/material' as mat;
+
 .wrapper {
     background: var(--mat-sys-inverse-on-surface);
+}
+
+mat-button-toggle-group {
+    @include mat.button-toggle-overrides ((
+        shape: 5px,
+        height: 36px,
+        selected-state-background-color: var(--mat-sys-primary),
+        selected-state-text-color: var(--mat-sys-on-primary),
+    ))
 }

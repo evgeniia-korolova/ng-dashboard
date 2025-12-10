@@ -1,6 +1,6 @@
 <div
-  class="p-4 rounded-lg shadow-sm border border-gray-200 hover:border-black cursor-pointer pt-1"
-  [class]="formService.selectedField()?.id === field().id ? '!border-rose-800' : ''"
+  class="p-4 rounded-lg shadow-sm border border-gray-200 hover:border-[var(--mat-sys-inverse-primary)] cursor-pointer pt-1 bg-[var(--mat-sys-inverse-on-surface)] text-[var(--mat-sys-on-secondary)]"
+  [class]="formService.selectedField()?.id === field().id ? '!border-[var(--mat-sys-primary)]' : ''"
   (click)="formService.setSelectedField(field().id)"
 >
   <div class="flex items-center justify-between mb-1">

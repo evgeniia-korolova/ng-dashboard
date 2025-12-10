@@ -354,3 +354,17 @@ mat-button-toggle-group.contrast {
   .mdc-notched-outline__notch {
   border-right: 1px solid rgba(0, 0, 0, 0);
 }
+
+
+.compact-button {
+  @include mat.button-overrides ((
+    tonal-container-shape: 5px,
+    tonal-container-height: 36px,
+  ))
+}
+
+mat-form-field {
+  @include mat.theme((
+    density: -3,
+  ))
+}
