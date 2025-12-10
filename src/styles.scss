@@ -368,3 +368,8 @@ mat-form-field {
     density: -3,
   ))
 }
+
+::view-transition-old(.field-transition),
+::view-transition-new(.field-transition) {
+  height: 100%;
+}

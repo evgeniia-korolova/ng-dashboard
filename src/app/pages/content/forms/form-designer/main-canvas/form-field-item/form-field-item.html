@@ -4,7 +4,7 @@
   (click)="formService.setSelectedField(field().id)"
 >
   <div class="flex items-center justify-between mb-1">
-    <span class="text-sm">{{ field().type | titlecase }} </span>
+    <span class="text-sm text-[var(--mat-sys-inverse-surface)]">{{ field().type | titlecase }} </span>
     <button matIconButton class="-m-2" (click)="deleteField($event)">
       <mat-icon>delete</mat-icon>
     </button>

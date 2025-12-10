@@ -1,15 +1,23 @@
-<div class="flex flex-col gap-4 rounded-lg mat-elevation-z3 mb-3 h-[calc(100vh-64px -32px)] bg-on-surface-variant ">
-    <div class="flex flex-col gap-1 items-center justify-center py-4">
-        <h1 class="text-2xl text-[var(--mat-sys-primary)] tracking-wide font-medium">Form Designer</h1>
-        <p class="text-center text-[var(--mat-sys-secondary)]">Create beutiful tesponsive forms with Angular Material and Tailwind</p>
-    </div>
-    <div class="flex gap-4 relative" cdkDropListGroup>
-        <app-form-elements-menu class="w-48"/>
-        <app-main-canvas class="flex-1"/>
-        <app-field-settings class="w-48"/>
-        <button matButton="tonal" class="!absolute -top-[60px] right-10 compact-button" (click)="exportFormService.exportForm()">
-            Export Form
-            <mat-icon>download</mat-icon>
-        </button>
-    </div>
+<div
+  class="flex flex-col gap-4 rounded-lg mat-elevation-z3 mb-3 h-[calc(100vh-64px -32px)] bg-[var(--mat-sys-secondary-container)]"
+>
+  <div class="flex flex-col gap-1 items-center justify-center py-4 [view-transition-name: top-header] z-10">
+    <h1 class="text-2xl text-[var(--mat-sys-primary)] tracking-wide font-medium">Form Designer</h1>
+    <p class="text-center text-[var(--mat-sys-secondary)]">
+      Create beutiful tesponsive forms with Angular Material and Tailwind
+    </p>
+  </div>
+  <div class="flex gap-4 relative" cdkDropListGroup>
+    <app-form-elements-menu class="w-48" />
+    <app-main-canvas class="flex-1" />
+    <app-field-settings class="w-48" />
+    <button
+      matButton="tonal"
+      class="!absolute -top-[60px] right-10 compact-button"
+      (click)="exportFormService.exportForm()"
+    >
+      Export Form
+      <mat-icon>download</mat-icon>
+    </button>
+  </div>
 </div>
