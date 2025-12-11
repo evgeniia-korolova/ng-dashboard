@@ -6,9 +6,12 @@ Styled with Angular Material, light/dark mode implemented
 ## Navbar
 
 The sidebar includes a main menu with support for nested submenus.  
+- **Burger toggle (mobile)** — on smaller screens, the sidebar collapses into a burger icon.
+• 	Tapping the burger opens or closes the menu.
+• 	This ensures the UI remains clean and usable on mobile devices.
 Clicking the burger icon toggles between two display modes:  
-- **Expanded view** — menu items with labels and icons  
-- **Compact view** — only icons are visible, saving space on the screen
+- **Expanded view (desktop)** — menu items with labels and icons  
+- **Compact view (desktop)** — only icons are visible, saving space on the screen
 
 
 
@@ -19,6 +22,29 @@ The dashboard allows you to fully manage widgets using the **widgets panel**:
 - **Remove widgets** — drag existing widgets back into the panel to delete them  
 - **Reorder widgets** — drag and drop widgets to arrange them in the desired order
 - **Drag the pannel** - drag the pannel and drop it at the convenient place
+
+## Content
+
+### Forms
+
+#### Inputs
+- 	A showcase of all core Angular Material form controls.
+- 	Each element is presented with custom styling to demonstrate how design tokens and theming can be applied consistently.
+- 	Useful as a reference for building uniform, styled forms across the application.
+
+#### Simple Form Example
+- 	A minimal example of a Material form.
+- 	Demonstrates how to combine multiple controls into a working form with validation and layout.
+- 	Serves as a quick starting point for developers new to Angular Material forms.
+
+#### Form Designer
+
+- 	An interactive tool for building forms visually.
+- 	**Left panel** : a palette of available form elements (input, checkbox, datepicker, select).
+- 	**Center area** : the form canvas where elements can be dragged and dropped.
+- 	Supports adding rows, reordering elements and rows, and deleting items, preview the form
+- 	**Right panel**: contextual editor that appears when a form field is selected, allowing property customization.
+- 	Export feature: the designed form can be generated as code, making it easy to integrate into projects.
 
 
 ## Grid animation

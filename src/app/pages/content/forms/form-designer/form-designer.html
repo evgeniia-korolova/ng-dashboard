@@ -8,12 +8,12 @@
     </p>
   </div>
   <div class="flex gap-4 relative" cdkDropListGroup>
-    <app-form-elements-menu class="w-48" />
-    <app-main-canvas class="flex-1" />
-    <app-field-settings class="w-48" />
+    <app-form-elements-menu class="w-48 flex-shrink-0" />
+    <app-main-canvas class="flex-auto min-w-[250px]" />
+    <app-field-settings class="w-48 flex-shrink-0" />
     <button
       matButton="tonal"
-      class="!absolute -top-[60px] right-10 compact-button"
+      class="!absolute -top-[100px] right-10 compact-button cursor-pointer z-20"
       (click)="exportFormService.exportForm()"
     >
       Export Form
