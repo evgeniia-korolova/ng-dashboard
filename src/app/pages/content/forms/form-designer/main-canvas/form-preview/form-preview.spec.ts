@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LongForm } from './long-form';
+import { FormPreview } from './form-preview';
 
-describe('LongForm', () => {
-  let component: LongForm;
-  let fixture: ComponentFixture<LongForm>;
+describe('FormPreview', () => {
+  let component: FormPreview;
+  let fixture: ComponentFixture<FormPreview>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [LongForm]
+      imports: [FormPreview]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(LongForm);
+    fixture = TestBed.createComponent(FormPreview);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

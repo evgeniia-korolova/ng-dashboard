@@ -1,0 +1,45 @@
+<div class="p-4 bg-[var(--mat-sys-on-secondary)]">
+  @for (row of formService.rows(); track row.id) {
+  <div
+    class="relative p-5 pt-2 ps-10 rounded-lg border-2 border-dashed border-gray-200 mb-4 !bg-[var(--mat-sys-background)]"
+    cdkDropList
+    [cdkDropListData]="row.id"
+    (cdkDropListDropped)="onDropInRow($event, row.id)"
+    [cdkDropListOrientation]="'mixed'"
+    [style.view-transition-name]="'row-' + row.id"
+  >
+    <div class="flex justify-between items-center">
+      <span class="text-[var(--mat-sys-primary)] mb-2">Row</span>
+      @if (formService.rows().length > 1) {
+      <button matIconButton (click)="formService.deleteRow(row.id)">
+        <mat-icon>cancel</mat-icon>
+      </button>
+      }
+    </div>
+    <div class="flex gap-4 flex-wrap">
+      @for (field of row.fields; track field.id) {
+      <app-form-field-item
+        cdkDrag
+        [cdkDragData]="field"
+        class="flex-1"
+        [field]="field"
+        [style.view-transition-mane]="'field-' + field.id"
+        [style.view-transition-class]="'field-transition'"
+      />
+      } @empty {
+      <div class="w-full p-4 border border-dashed border-[var(--mat-sys-primary)] rounded">
+        Drag and drop form elements here
+      </div>
+      }
+    </div>
+    <div class="absolute pt-5 left-0 gap-0 flex flex-col top-1/2 -translate-y-1/2">
+      <button matIconButton [disabled]="$first" (click)="formService.moveRowUp(row.id)">
+        <mat-icon>keyboard_arrow_up</mat-icon>
+      </button>
+      <button matIconButton [disabled]="$last" (click)="formService.moveRowDown(row.id)">
+        <mat-icon>keyboard_arrow_down</mat-icon>
+      </button>
+    </div>
+  </div>
+  }
+</div>

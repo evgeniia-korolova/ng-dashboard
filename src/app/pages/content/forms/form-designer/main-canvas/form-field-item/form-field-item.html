@@ -1,0 +1,17 @@
+<div
+  class="p-4 rounded-lg shadow-sm border border-gray-200 hover:border-[var(--mat-sys-inverse-primary)] cursor-pointer pt-1 bg-[var(--mat-sys-inverse-on-surface)] text-[var(--mat-sys-on-secondary)]"
+  [class]="formService.selectedField()?.id === field().id ? '!border-[var(--mat-sys-primary)]' : ''"
+  (click)="formService.setSelectedField(field().id)"
+>
+  <div class="flex items-center justify-between mb-1">
+    <span class="text-sm text-[var(--mat-sys-inverse-surface)]">{{ field().type | titlecase }} </span>
+    <button matIconButton class="-m-2" (click)="deleteField($event)">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+  <app-field-preview [field]="field()" />
+  <!-- <ng-container
+    [ngComponentOutlet]="previewComponent()"
+    [ngComponentOutletInputs]="{ field: field() }"
+  ></ng-container> -->
+</div>

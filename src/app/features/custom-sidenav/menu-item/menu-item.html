@@ -26,8 +26,13 @@
 
 @if (item().subItems && nestedMenuOpen()) {
 <div animate.enter="entering" animate.leave="leaving">
-  @for (subItem of item().subItems; track subItem.id) {  
-  <app-menu-item [item]="subItem" [collapsed]="collapsed()" [routeHistory]="routeHistory() + '/' + item().route"/>
+  @for (subItem of item().subItems; track subItem.id) {
+  <app-menu-item
+    [item]="subItem"
+    [collapsed]="collapsed()"
+    [routeHistory]="routeHistory() + '/' + item().route"
+    (menuAction)="menuAction.emit($event)"
+  />
   }
 </div>
 }

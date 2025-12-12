@@ -19,10 +19,12 @@
     )
   );
 
-  @include mat.toolbar-overrides((
-    container-background-color: var(--mat-sys-primary-container),
-    container-text-color: var(--mat-sys-on-primary-container),
-  ));
+  @include mat.toolbar-overrides(
+    (
+      container-background-color: var(--mat-sys-primary-container),
+      container-text-color: var(--mat-sys-on-primary-container),
+    )
+  );
 }
 
 html,
@@ -35,12 +37,25 @@ body {
   font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
 
+// .cdk-drop-list-dragging:not(.elements-menu) {
+//   opacity: 0.5;  
+//   border-left: 5px solid var(--mat-sys-primary);
+//   padding-left: 8px;
+// }
+
 .cdk-drop-list-dragging {
   opacity: 0.5;
-  border-left: 5px solid #a507a0;
   border-left: 5px solid var(--mat-sys-primary);
   padding-left: 8px;
 }
+
+.elements-menu.cdk-drop-list-dragging {
+  opacity: 1;
+  border: none;
+  padding: 0;
+}
+
+
 
 [matIconButton].primary {
   @include mat.icon-button-overrides(
@@ -286,7 +301,75 @@ mat-button-toggle-group.contrast {
 }
 
 .elevated-card {
-  @include mat.card-overrides((
-    elevated-container-color: var(--mat-sys-on-primary),    
-  ));
+  @include mat.card-overrides(
+    (
+      elevated-container-color: var(--mat-sys-on-primary),
+    )
+  );
+}
+
+.field {
+  background-color: var(--mat-sys-surface-bright);
+}
+
+.my-buttons-panel {
+  background-color: var(--mat-sys-surface-container-high);
+}
+
+.error-message {
+  @include mat.form-field-overrides(
+    (
+      error-text-color: rgb(250, 126, 17),
+      filled-error-caret-color: rgb(250, 126, 17),
+    )
+  );
+}
+
+.square-checkbox {
+  @include mat.checkbox-overrides(
+    (
+      selected-focus-state-layer-opacity: 0.4,
+      unselected-focus-state-layer-opacity: 0.5,
+      unselected-hover-state-layer-opacity: 0.4,
+      unselected-hover-state-layer-color: var(--mat-sys-secondary-fixed-dim),
+    )
+  );
+}
+
+.outlined-field {
+  @include mat.form-field-overrides(
+    (
+      // outlined-caret-color: var(--mat-sys-primary),
+      disabled-leading-icon-color: red,
+      trailing-icon-color: var(--mat-sys-primary)
+    )
+  );
+}
+
+// .mdc-text-field--outlined .mdc-notched-outline .mdc-notched-outline__notch {
+//   min-width: calc(100% - 60px) !important;
+// }
+
+.mat-mdc-form-field.mat-mdc-form-field.mat-mdc-form-field.mat-mdc-form-field.mat-mdc-form-field.mat-mdc-form-field
+  .mdc-notched-outline__notch {
+  border-right: 1px solid rgba(0, 0, 0, 0);
+}
+
+
+.compact-button {
+  @include mat.button-overrides ((
+    tonal-container-shape: 5px,
+    tonal-container-height: 36px,
+  ))
+}
+
+mat-form-field {
+  @include mat.theme((
+    density: -3,
+  ))
+}
+
+::view-transition-old(.field-transition),
+::view-transition-new(.field-transition) {
+  height: 100%;
 }
