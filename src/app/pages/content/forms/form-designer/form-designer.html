@@ -1,5 +1,5 @@
 <div
-  class="flex flex-col gap-4 rounded-lg mat-elevation-z3 mb-3 h-[calc(100vh-64px -32px)] bg-[var(--mat-sys-secondary-container)]"
+  class="flex flex-col gap-4 rounded-lg mat-elevation-z3  h-[calc(100vh-64px -28px)] bg-[var(--mat-sys-secondary-container)]"
 >
   <div class="flex flex-col gap-1 items-center justify-center py-4 [view-transition-name: top-header] z-10">
     <h1 class="text-2xl text-[var(--mat-sys-primary)] tracking-wide font-medium">Form Designer</h1>
@@ -7,10 +7,10 @@
       Create beutiful tesponsive forms with Angular Material and Tailwind
     </p>
   </div>
-  <div class="flex gap-4 relative" cdkDropListGroup>
-    <app-form-elements-menu class="w-48 flex-shrink-0" />
-    <app-main-canvas class="flex-auto min-w-[250px]" />
-    <app-field-settings class="w-48 flex-shrink-0" />
+  <div class="flex flex-col lg:flex-row gap-4 relative" cdkDropListGroup>
+    <app-form-elements-menu class="lg:w-44 flex-shrink-0 order-1 lg:order-none" />
+    <app-main-canvas class="flex-auto min-w-[250px] order-2 lg:order-none" />
+    <app-field-settings class="lg:w-44 flex-shrink-0 order-3 lg:order-none" />
     <button
       matButton="tonal"
       class="!absolute -top-[100px] right-10 compact-button cursor-pointer z-20"
