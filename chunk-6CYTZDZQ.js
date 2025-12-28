@@ -1,0 +1,1 @@
+import{Ob as n,Pb as s,hc as c,pb as i}from"./chunk-3WBPQ6A3.js";var e=class a{static \u0275fac=function(t){return new(t||a)};static \u0275cmp=i({type:a,selectors:[["app-analitics"]],decls:2,vars:0,template:function(t,l){t&1&&(n(0,"p"),c(1,"analitics works!"),s())},encapsulation:2})};export{e as default};

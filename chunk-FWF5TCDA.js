@@ -1,0 +1,1 @@
+import{ba as t,wa as o}from"./chunk-3WBPQ6A3.js";var a=class e{theme=o("light");static \u0275fac=function(r){return new(r||e)};static \u0275prov=t({token:e,factory:e.\u0275fac,providedIn:"root"})};export{a};
