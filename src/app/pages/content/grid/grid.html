@@ -5,7 +5,7 @@
   <mat-button-toggle value="">Custom</mat-button-toggle>
 </mat-button-toggle-group>
 
-<div class="container responsive-grid grid grid-cols-[repeat(auto-fill,_minmax(250px,_1fr))] gap-6">
+<div class="container responsive-grid grid grid-cols-[repeat(auto-fill,minmax(250px,1fr))] gap-6">
   @for (card of cards(); track card.id; ) {
   <app-grid-card [cardContent]="card" [variantSize]="size()" />
   }

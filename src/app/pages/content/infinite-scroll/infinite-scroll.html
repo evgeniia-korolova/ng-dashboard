@@ -1,0 +1,26 @@
+<div class="max-w-full">
+  <cdk-virtual-scroll-viewport itemSize="72" class="content" #scroller>
+    <mat-list *cdkVirtualFor="let item of listItems()">
+      <mat-list-item>
+        <img matListItemAvatar [src]="item.image" [alt]="item.title" />
+        <h3 matListItemTitle>{{ item.title }}</h3>
+        <h3 matListItemLine>Downloads : {{ item.downloads }}</h3>
+
+        @if(item.showDetails) {
+        <p matListItemLine>
+          <span> {{ item.description }} </span>
+        </p>
+        }
+        <button matIconButton matListItemMeta (click)="toggleDetails(item.id)">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+      </mat-list-item>
+      <mat-divider inset></mat-divider>
+    </mat-list>
+    @if (loading()) {
+      <div class="flex justify-center mt-3">
+        <mat-progress-spinner [mode]="'indeterminate'" [diameter]="50"></mat-progress-spinner>
+      </div>
+    }
+  </cdk-virtual-scroll-viewport>
+</div>

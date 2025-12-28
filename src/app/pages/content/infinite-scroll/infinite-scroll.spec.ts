@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Playlists } from './playlists';
+import { InfiniteScroll } from './infinite-scroll';
 
-describe('Playlists', () => {
-  let component: Playlists;
-  let fixture: ComponentFixture<Playlists>;
+describe('InfiniteScroll', () => {
+  let component: InfiniteScroll;
+  let fixture: ComponentFixture<InfiniteScroll>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Playlists]
+      imports: [InfiniteScroll]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Playlists);
+    fixture = TestBed.createComponent(InfiniteScroll);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
