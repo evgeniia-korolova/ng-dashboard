@@ -75,6 +75,13 @@ export const menuItems = [
         route: 'grid',         
         loadComponent: () => import('../pages/content/grid/grid'),
     },
+      { 
+        id: 23, 
+        icon: 'autorenew', 
+        label: 'Infinite Scroll', 
+        route: 'scroll',         
+        loadComponent: () => import('../pages/content/infinite-scroll/infinite-scroll'),
+    },
     ],
   },
   {
